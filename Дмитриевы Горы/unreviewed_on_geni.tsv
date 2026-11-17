@@ -1,0 +1,203 @@
+# Не вычитанные записи, которые уже на Geni — храповик (verso/core/ratchet.py).
+# Запись с reviewed=False попадает на Geni, только пока её отпечаток здесь; новая
+# или изменённая без вычитки — держится. Строки только убывают: «Вычитано» в Verso
+# и `make review-ratchet-prune` их вычёркивают; руками сюда не добавлять.
+# Изменённая без вычитки запись остаётся на Geni, только если её строку перепривязать
+# (`make review-ratchet-rebind`): тот же вызов, номер, пол и лист, строка на строку.
+# файл	отпечаток	запись
+1902/dmitrievy_gory_births_1902.py	14e0e4f55fe1df8c	birth 14 м, л. 67об
+1902/dmitrievy_gory_births_1902.py	6533e32b89d46405	birth 19 м, л. 67об
+1902/dmitrievy_gory_births_1902.py	6ac993707d434523	birth 47 ж, л. 75об
+1902/dmitrievy_gory_births_1902.py	cbcacf13323d87f8	birth 60 ж, л. 78об
+1902/dmitrievy_gory_births_1902.py	8ad03b2f14971dc1	birth 62 ж, л. 78об
+1902/dmitrievy_gory_births_1902.py	fcc5d99d2322abd6	birth 70 ж, л. 80об
+1902/dmitrievy_gory_deaths_1902.py	97df8aff6cbf6bda	death 39 ж, л. 61об
+1902/dmitrievy_gory_marriages_1902.py	853accbdd02c41dc	marriage 14, л. 84об
+1902/dmitrievy_gory_marriages_1902.py	95eaba384b72ec9d	marriage 23, л. 86об
+1903/dmitrievy_gory_births_1903.py	0a800068f9ba08a7	birth 3 ж, л. 31об
+1903/dmitrievy_gory_births_1903.py	c61276a55e3c8a64	birth 18 ж, л. 34об
+1903/dmitrievy_gory_births_1903.py	e88558e0c8cbf6cb	birth 20 ж, л. 34об
+1903/dmitrievy_gory_births_1903.py	823daf69801f3aae	birth 20 м, л. 36об
+1903/dmitrievy_gory_births_1903.py	ecb17762207e9a70	birth 43 ж, л. 47об
+1903/dmitrievy_gory_births_1903.py	df56383077fa326d	birth 42 м, л. 47об
+1903/dmitrievy_gory_deaths_1903.py	ab32523f9c40ee2b	death 24 м, л. 151об
+1903/dmitrievy_gory_deaths_1903.py	03d4866777c726dd	death 27 м, л. 151об
+1903/dmitrievy_gory_deaths_1903.py	2248976d415a9046	death 45 ж, л. 153об
+1903/dmitrievy_gory_deaths_1903.py	5f359e14d49f83bd	death 34 м, л. 153об
+1903/dmitrievy_gory_marriages_1903.py	15cff4f34a6543a8	marriage 7, л. 30об
+1903/dmitrievy_gory_marriages_1903.py	35b632ea55f2c8ca	marriage 11, л. 30об
+1904/dmitrievy_gory_births_1904.py	6dcd84c008e845e0	birth 5 ж, л. 214об
+1904/dmitrievy_gory_births_1904.py	c6cac69940b04b19	birth 13 ж, л. 215об
+1904/dmitrievy_gory_births_1904.py	f47766f3315924b9	birth 25 м, л. 220об
+1904/dmitrievy_gory_births_1904.py	172d9e65a3fbdcf3	birth 27 ж, л. 220об
+1904/dmitrievy_gory_births_1904.py	41b29a3eada42113	birth 42 м, л. 225об
+1904/dmitrievy_gory_births_1904.py	6836e723b041ffd6	birth 48 м, л. 226об
+1904/dmitrievy_gory_deaths_1904.py	5aabfa1e80fd983b	death 9 м, л. 243об
+1904/dmitrievy_gory_deaths_1904.py	3850753a7bc1c0c6	death 6 ж, л. 243об
+1904/dmitrievy_gory_deaths_1904.py	b33b89540b7b74b8	death 10 ж, л. 244об
+1904/dmitrievy_gory_deaths_1904.py	aa702995b2c1ff7c	death 15 ж, л. 245об
+1904/dmitrievy_gory_deaths_1904.py	bd6578913877c272	death 21 ж, л. 247об
+1904/dmitrievy_gory_deaths_1904.py	842edf05d7b900d7	death 41 м, л. 249об
+1904/dmitrievy_gory_marriages_1904.py	56eb9b0a8b50c2d0	marriage 6, л. 237об
+1904/dmitrievy_gory_marriages_1904.py	afe1e8168f4de9d5	marriage 12, л. 239об
+1904/dmitrievy_gory_marriages_1904.py	699d0c06b0d2f9db	marriage 13, л. 239об
+1904/dmitrievy_gory_marriages_1904.py	04eedb7afe0e6e7c	marriage 22, л. 241об
+1905/dmitrievy_gory_births_1905.py	0c5c1fd6b92f1ea7	birth 5 м, л. 251об
+1905/dmitrievy_gory_births_1905.py	e9e7a7b4efa58b87	birth 13 ж, л. 251об
+1905/dmitrievy_gory_births_1905.py	52d667746f5c56cb	birth 10 м, л. 252об
+1905/dmitrievy_gory_births_1905.py	983fbec88d92980a	birth 26 ж, л. 254об
+1905/dmitrievy_gory_births_1905.py	364d37b08d52f07d	birth 47 ж, л. 262об
+1905/dmitrievy_gory_births_1905.py	319d86a6fa5d491a	birth 51 м, л. 263об
+1905/dmitrievy_gory_births_1905.py	6c5a2e845290aae0	birth 62 ж, л. 265об
+1905/dmitrievy_gory_deaths_1905.py	5f068388e31deca5	death 5 м, л. 278об
+1905/dmitrievy_gory_deaths_1905.py	7b3685550ae57f6b	death 6 м, л. 278об
+1905/dmitrievy_gory_deaths_1905.py	3b7c7c187483ba9e	death 11 м, л. 279об
+1905/dmitrievy_gory_deaths_1905.py	c4a0bec67fcb9443	death 33 м, л. 285об
+1905/dmitrievy_gory_deaths_1905.py	ba757effef494dd4	death 44 ж, л. 285об
+1905/dmitrievy_gory_deaths_1905.py	4ad450f7902215bd	death 45 ж, л. 285об
+1905/dmitrievy_gory_deaths_1905.py	1b9c0bf8f6d11cd8	death 38 м, л. 286об
+1905/dmitrievy_gory_marriages_1905.py	47639cc898da0b77	marriage 8, л. 271об
+1905/dmitrievy_gory_marriages_1905.py	38d34e7cff322beb	marriage 18, л. 273об
+1905/dmitrievy_gory_marriages_1905.py	7992313ff8c5357a	marriage 23, л. 273об
+1906/dmitrievy_gory_births_1906.py	b09d849168099e5f	birth 3 ж, л. 288об
+1906/dmitrievy_gory_births_1906.py	89a7d6d827a1d8d6	birth 11 ж, л. 293об
+1906/dmitrievy_gory_births_1906.py	0221d4a7b74ba10e	birth 19 ж, л. 295об
+1906/dmitrievy_gory_births_1906.py	6491f9c3b58c906f	birth 50 м, л. 304об
+1906/dmitrievy_gory_births_1906.py	6c6733e3c7f8cc0d	birth 54 м, л. 305об
+1906/dmitrievy_gory_births_1906.py	de14ce0891bfc573	birth 46 ж, л. 306об
+1906/dmitrievy_gory_births_1906.py	915ab6b175916b4c	birth 66 ж, л. 310об
+1906/dmitrievy_gory_births_1906.py	86852e1075ecef41	birth 72 м, л. 310об
+1906/dmitrievy_gory_births_1906.py	3b0768ccab9a03e0	birth 74 м, л. 310об
+1906/dmitrievy_gory_deaths_1906.py	c2128acc602cb81f	death 28 ж, л. 327об
+1906/dmitrievy_gory_deaths_1906.py	87f0a50029cfd58c	death 30 ж, л. 327об
+1906/dmitrievy_gory_deaths_1906.py	c4ed6a81c45beb65	death 49 ж, л. 331об
+1906/dmitrievy_gory_marriages_1906.py	ae27a2b46f370c53	marriage 5, л. 313об
+1907/dmitrievy_gory_births_1907.py	b9030018dcf43757	birth 2 ж, л. 334об
+1907/dmitrievy_gory_births_1907.py	636d7e8eaa9e42e5	birth 10 ж, л. 337об
+1907/dmitrievy_gory_births_1907.py	2a11e825dbd1b14e	birth 29 м, л. 344об
+1907/dmitrievy_gory_births_1907.py	b79cda5861a8ffbf	birth 64 ж, л. 354об
+1907/dmitrievy_gory_births_1907.py	6e4da42c0b882bdd	birth 82 ж, л. 360об
+1907/dmitrievy_gory_deaths_1907.py	ed49458d0699047c	death 3 м, л. 369об
+1907/dmitrievy_gory_marriages_1907.py	163ada93e8d4a3bd	marriage 18, л. 366об
+1908/dmitrievy_gory_births_1908.py	4c431af24cefd776	birth 2 м, л. 379об
+1908/dmitrievy_gory_births_1908.py	0c5e8c2adb2994db	birth 6 м, л. 380об
+1908/dmitrievy_gory_births_1908.py	ca366a840abb67fd	birth 14 ж, л. 386об
+1908/dmitrievy_gory_births_1908.py	9fe88e7db3ed0a1b	birth 20 ж, л. 388об
+1908/dmitrievy_gory_births_1908.py	a10af70017e1041a	birth 53 м, л. 396об
+1908/dmitrievy_gory_births_1908.py	cebfe9e1a4b2f7bb	birth 59 ж, л. 396об
+1908/dmitrievy_gory_deaths_1908.py	ee27c200b8fcb7f2	death 1 ж, л. 407об
+1908/dmitrievy_gory_deaths_1908.py	3c5bd3126dc39b0e	death 24 м, л. 411об
+1908/dmitrievy_gory_deaths_1908.py	fe6e054c6d403f21	death 34 ж, л. 414об
+1908/dmitrievy_gory_marriages_1908.py	758d8acc13ecdd19	marriage 15, л. 405об
+1908/dmitrievy_gory_marriages_1908.py	7a36e484623c8527	marriage 17, л. 405об
+1909/dmitrievy_gory_births_1909.py	9050a3dbd731619e	birth 16 ж, л. 191об
+1909/dmitrievy_gory_births_1909.py	7deffe91fa7d284a	birth 26 ж, л. 193об
+1909/dmitrievy_gory_births_1909.py	e6cce7024b507fd9	birth 51 ж, л. 199об
+1909/dmitrievy_gory_births_1909.py	578f49084bc41301	birth 56 ж, л. 200об
+1909/dmitrievy_gory_births_1909.py	ac211fa1da3d49ec	birth 79 ж, л. 208об
+1909/dmitrievy_gory_births_1909.py	e18cf54c196e646b	birth 92 м, л. 209об
+1909/dmitrievy_gory_deaths_1909.py	d59af6289ce47ab1	death 2 ж, л. 110об
+1909/dmitrievy_gory_deaths_1909.py	649e3c6edaeafcdb	death 13 ж, л. 114об
+1909/dmitrievy_gory_deaths_1909.py	9b449d027803f8db	death 15 ж, л. 115об
+1909/dmitrievy_gory_deaths_1909.py	4393cf6192e616a5	death 30 ж, л. 117об
+1909/dmitrievy_gory_deaths_1909.py	89dfdbc8ff7b6f13	death 54 ж, л. 122об
+1909/dmitrievy_gory_deaths_1909.py	36aa56aa9751ce62	death 61 ж, л. 123об
+1909/dmitrievy_gory_deaths_1909.py	304ae292a7a43331	death 49 м, л. 123об
+1909/dmitrievy_gory_marriages_1909.py	77689eed30dae267	marriage 3, л. 24об
+1909/dmitrievy_gory_marriages_1909.py	45ad84ca807ba6f4	marriage 12, л. 159об
+1909/dmitrievy_gory_marriages_1909.py	2a4387b431f12dd3	marriage 21, л. 28об
+1910/dmitrievy_gory_births_1910.py	812ea8b21556f3ed	birth 1 м, л. 160об
+1910/dmitrievy_gory_births_1910.py	4df8a961222dded1	birth 6 м, л. 161об
+1910/dmitrievy_gory_births_1910.py	7735cfc6f256c3fa	birth 11 м, л. 162об
+1910/dmitrievy_gory_births_1910.py	75ae17f9fa1079b1	birth 13 ж, л. 163об
+1910/dmitrievy_gory_births_1910.py	e7e51e7247c27ddc	birth 38 ж, л. 170об
+1910/dmitrievy_gory_births_1910.py	ad5d91dfa9edbee0	birth 45 м, л. 170об
+1910/dmitrievy_gory_births_1910.py	179d47119c5317a8	birth 45 ж, л. 173об
+1910/dmitrievy_gory_births_1910.py	748fa0913066dbfb	birth 59 ж, л. 179об
+1910/dmitrievy_gory_deaths_1910.py	8fe87d47c7a95e4b	death 23 м, л. 421об
+1910/dmitrievy_gory_deaths_1910.py	fd8f845c2594dbb6	death 44 м, л. 425об
+1911/dmitrievy_gory_births_1911.py	70def73e1b8f5872	birth 16 м, л. 5об
+1911/dmitrievy_gory_births_1911.py	d53220661b35604d	birth 28 м, л. 7об
+1911/dmitrievy_gory_births_1911.py	c29e2ab67cc06de7	birth 30 ж, л. 8об
+1911/dmitrievy_gory_births_1911.py	badb6d49c57f6d7f	birth 54 м, л. 14об
+1911/dmitrievy_gory_births_1911.py	97d2dbac5966271d	birth 51 ж, л. 14об
+1911/dmitrievy_gory_births_1911.py	4a9cd756ca6a6ee4	birth 63 ж, л. 18об
+1911/dmitrievy_gory_deaths_1911.py	fd642f2f1fb73f15	death 1 ж, л. 28об
+1911/dmitrievy_gory_deaths_1911.py	58aa75eb43d92ca1	death 3 ж, л. 28об
+1911/dmitrievy_gory_deaths_1911.py	d0097ac2e7954804	death 7 ж, л. 29об
+1911/dmitrievy_gory_deaths_1911.py	0af4b19a935e52e5	death 8 ж, л. 29об
+1911/dmitrievy_gory_deaths_1911.py	ce58269987047a15	death 11 ж, л. 30об
+1911/dmitrievy_gory_deaths_1911.py	fd634a6eb39779a0	death 14 ж, л. 30об
+1911/dmitrievy_gory_marriages_1911.py	c4bf991cff49a176	marriage 6, л. 24об
+1911/dmitrievy_gory_marriages_1911.py	d2bdc94b5ffb00e7	marriage 15, л. 26об
+1912/dmitrievy_gory_births_1912.py	301688f6ccf0c90b	birth 11 ж, л. 40об
+1912/dmitrievy_gory_births_1912.py	b13fa727a8ecc0a4	birth 20 м, л. 43об
+1912/dmitrievy_gory_births_1912.py	e2f9854de8c8ebc5	birth 26 м, л. 45об
+1912/dmitrievy_gory_births_1912.py	145b7e601749d359	birth 26 ж, л. 45об
+1912/dmitrievy_gory_births_1912.py	7db84efb9aa88b89	birth 49 ж, л. 52об
+1912/dmitrievy_gory_births_1912.py	a75801a35d1a563e	birth 50 ж, л. 52об
+1912/dmitrievy_gory_births_1912.py	84d2ef4c920fdd54	birth 52 м, л. 53об
+1912/dmitrievy_gory_deaths_1912.py	fd8d7348f9690005	death 27 м, л. 74об
+1912/dmitrievy_gory_deaths_1912.py	c01bcf4e4777c534	death 30 м, л. 75об
+1912/dmitrievy_gory_deaths_1912.py	31d84e4b07ac64f0	death 33 ж, л. 78об
+1912/dmitrievy_gory_marriages_1912.py	ce1efe6bdcdab704	marriage 4, л. 61об
+1912/dmitrievy_gory_marriages_1912.py	b4ce37cf3272dc54	marriage 6, л. 61об
+1912/dmitrievy_gory_marriages_1912.py	0a55a31fd1d9d0c5	marriage 20, л. 65об
+1912/dmitrievy_gory_marriages_1912.py	315c20844b62d1f3	marriage 24, л. 65об
+1912/dmitrievy_gory_marriages_1912.py	334d2fe77119cb94	marriage 33, л. 68об
+1913/dmitrievy_gory_births_1913.py	74a7beb26ae8a5d4	birth 11 ж, л. 83об
+1913/dmitrievy_gory_births_1913.py	0052bac54f6c2925	birth 19 ж, л. 87об
+1913/dmitrievy_gory_births_1913.py	fc91d0b5b98997e3	birth 35 ж, л. 93об
+1913/dmitrievy_gory_births_1913.py	9e6cd1333b3ec3d0	birth 53 м, л. 96об
+1913/dmitrievy_gory_births_1913.py	8be1cee63bbc5a73	birth 70 м, л. 101об
+1913/dmitrievy_gory_births_1913.py	0e876d5b58888851	birth 61 ж, л. 102об
+1913/dmitrievy_gory_births_1913.py	cb1f1e1c11e5e130	birth 67 ж, л. 104об
+1913/dmitrievy_gory_deaths_1913.py	d91c754aecffe37b	death 9 м, л. 114об
+1913/dmitrievy_gory_deaths_1913.py	d503f60467cda890	death 18 м, л. 117об
+1913/dmitrievy_gory_deaths_1913.py	444f229e47b3b3f5	death 24 м, л. 118об
+1913/dmitrievy_gory_deaths_1913.py	b35b5a6c6533ce21	death 40 м, л. 120об
+1913/dmitrievy_gory_deaths_1913.py	dd8ba3d91e3f1592	death 36 ж, л. 121об
+1913/dmitrievy_gory_deaths_1913.py	84eaef537409887c	death 37 ж, л. 121об
+1913/dmitrievy_gory_marriages_1913.py	e32ef4db29393342	marriage 8, л. 107об
+1913/dmitrievy_gory_marriages_1913.py	a31b3713f4d94870	marriage 10, л. 107об
+1913/dmitrievy_gory_marriages_1913.py	408e41d6fee3045b	marriage 15, л. 109об
+1914/dmitrievy_gory_births_1914.py	081c6a5b60bb6a99	birth 14 м, л. 128об
+1914/dmitrievy_gory_births_1914.py	9f3c3e3f34b96d7c	birth 15 м, л. 128об
+1914/dmitrievy_gory_births_1914.py	ced7de368363654b	birth 24 м, л. 130об
+1914/dmitrievy_gory_births_1914.py	43323a6f76a998d3	birth 15 ж, л. 130об
+1914/dmitrievy_gory_births_1914.py	0aa9dd94f55d3b74	birth 17 ж, л. 130об
+1914/dmitrievy_gory_births_1914.py	2d32ac1d7af52318	birth 38 м, л. 134об
+1914/dmitrievy_gory_births_1914.py	d793087b00effc18	birth 36 ж, л. 135об
+1914/dmitrievy_gory_births_1914.py	188090f6657e1cac	birth 39 ж, л. 136об
+1914/dmitrievy_gory_births_1914.py	581b35521bc603da	birth 54 м, л. 138об
+1914/dmitrievy_gory_deaths_1914.py	ac622dc14cceba3f	death 18 ж, л. 153об
+1914/dmitrievy_gory_deaths_1914.py	f759995d9ae68077	death 20 м, л. 154об
+1914/dmitrievy_gory_deaths_1914.py	3c2d7bb2d5adf389	death 20 ж, л. 154об
+1914/dmitrievy_gory_marriages_1914.py	7124f1e5b4cd7840	marriage 12, л. 146об
+1914/dmitrievy_gory_marriages_1914.py	e0d54e62fc87db9a	marriage 13, л. 146об
+1915/dmitrievy_gory_births_1915.py	3e22810552d9ef06	birth 22 ж, л. 163об
+1915/dmitrievy_gory_births_1915.py	6fe97260949733fc	birth 47 ж, л. 172об
+1915/dmitrievy_gory_births_1915.py	5080a3437290ff9b	birth 69 м, л. 176об
+1915/dmitrievy_gory_deaths_1915.py	eff6484d3fe4a255	death 9 м, л. 187об
+1915/dmitrievy_gory_marriages_1915.py	59eedee78a07b417	marriage 1, л. 182об
+1916/dmitrievy_gory_births_1916.py	a3f9b536b5811675	birth 17 м, л. 204об
+1916/dmitrievy_gory_births_1916.py	0aea2652ff01d214	birth 25 м, л. 206об
+1916/dmitrievy_gory_births_1916.py	a68327cd79f03d19	birth 47 ж, л. 215об
+1916/dmitrievy_gory_deaths_1916.py	421eb207475927b0	death 25 м, л. 225об
+1916/dmitrievy_gory_marriages_1916.py	060fa9bae6ee6afa	marriage 1, л. 216об
+1916/dmitrievy_gory_marriages_1916.py	e1e50d1c36f11bf2	marriage 10, л. 218об
+1917/dmitrievy_gory_births_1917.py	82397f0209bf81c9	birth 21 ж, л. 237об
+1917/dmitrievy_gory_births_1917.py	a02b3b8ec7c8630f	birth 18 м, л. 238об
+1917/dmitrievy_gory_deaths_1917.py	ac1fe4047145e42b	death 6 м, л. 284об
+1917/dmitrievy_gory_deaths_1917.py	c61ad02e7a0bceb0	death 24 ж, л. 253об
+1917/dmitrievy_gory_marriages_1917.py	a4170e47fc460ef7	marriage 5, л. 243об
+1917/dmitrievy_gory_marriages_1917.py	01d90b91107f46b6	marriage 14, л. 245об
+1918/dmitrievy_gory_births_1918.py	d22047d6784043e6	birth 15 ж, л. 260об
+1918/dmitrievy_gory_births_1918.py	7058b9c8698b6de8	birth 19 м, л. 261об
+1918/dmitrievy_gory_births_1918.py	b05a857c6fe7abb9	birth 23 м, л. 262об
+1919/dmitrievy_gory_births_1919.py	aa1b4698bfdf5722	birth 8 м, л. 3об
+1919/dmitrievy_gory_births_1919.py	c54aa82a7ed0da1c	birth 10 м, л. 5об
+1919/dmitrievy_gory_births_1919.py	d1426a86d34ecee2	birth 34 м, л. 13об
+1919/dmitrievy_gory_deaths_1919.py	0eaf0bc79f4aff02	death 4 ж, л. 44об
+1919/dmitrievy_gory_deaths_1919.py	5e503754720cd493	death 14 м, л. 45об
+1919/dmitrievy_gory_deaths_1919.py	fbb5f1e7a3e920b0	death 23 м, л. 48об

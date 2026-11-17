@@ -1,0 +1,13 @@
+# baseline v2
+# Advisory DSL-linter findings that already existed when the ratchet was
+# introduced (see verso/ru/linters/baseline.py). Every line is real debt — an
+# unmapped place silently dropped from the generated TF, a census member
+# attached to no union, an age that contradicts the revision gap.
+#
+# This is a BASELINE, not an allowlist: nothing here is "fine", it is merely
+# known. Anything NOT listed fails the check. Fix some, then shrink it with:
+#   verso dsllint --baseline <this file> --update-baseline --villages
+#
+# Columns: CODE <tab> KEY <tab> FILE <tab> excerpt (informational, truncated —
+# only CODE+KEY are matched). KEY is the finding's code and params (v2), in no language.
+CPL012	f877161e21b11dea	Дмитриевы Горы/1834/dmitrievy_gory_census_1834.py	Член двора 3 (Татьяна): отчество «Федорова» не от имени «Василій», а parent_member=19 называет отцом его. Сверьте отчес…
