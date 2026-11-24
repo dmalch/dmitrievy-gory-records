@@ -4,7 +4,7 @@ from corpus.statuses import (SHEPELEV_PEASANT, SHEPELEV_PEASANT_DAUGHTER_GIRL,
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
 from verso.ru.dsl.statuses import (ECON_PEASANT_LEGAL_WIFE, ECON_PEASANT_MALE, PRIEST, SOLDIER,
-                                   SOLDIER_WIFE)
+                                   SOLDIER_LEGAL_WIFE, SOLDIER_WIFE)
 
 # Метрическая книга Покровской церкви с. Димитріевы Горы за 1836 г., часть первая
 # «О раждающихся». **ГАВО ф. 556 оп. 106 д. 599, лл. 307–314об** (кадры альбома 1–9).
@@ -154,7 +154,7 @@ dmitrievy_gory_births_1836 = birth_records(
                        birth(56, Gender.MALE, 20, 22,
                              child=person("Михаилъ"),
                              father=person("Иванъ", "Максимовъ", residence="Кононово", status=SOLDIER, comment="в домовом отпуске"),
-                             mother=person("Елена", "Кирилова", status="законная жена солдата"),
+                             mother=person("Елена", "Кирилова", status=SOLDIER_LEGAL_WIFE),
                              god_parent1=person("Григорій", "Максимовъ", status=ECON_PEASANT_MALE, residence="Кононово"),
                              god_parent2=person("Ѳедора", "Артемьева", status=SOLDIER_WIFE, residence="Кононово")),
                        ),

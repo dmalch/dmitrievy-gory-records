@@ -5,6 +5,8 @@
 `Дмитриевы Горы/ГГГГ/*.py` — книга одного года: записи в том виде, как они написаны в источнике, с
 дореформенной орфографией.
 
+Сайт: <https://dmalch.github.io/dmitrievy-gory-records/> — те же записи страницами: книга за книгой, с указателем имён и поиском.
+
 ## Источники
 
 - ГАВО ф. 556 оп. 106 д. 34
@@ -76,7 +78,7 @@
 Нужны Python 3.14 и, лучше, [uv](https://docs.astral.sh/uv/).
 
 ```bash
-make bootstrap   # .venv и verso v0.1.41
+make bootstrap   # .venv и verso v0.1.47
 make check       # линтер DSL и выгрузка записей в JSON (records/)
 ```
 

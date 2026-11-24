@@ -69,7 +69,7 @@ dmitrievy_gory_marriages_1859 = marriage_records(
                                    groom=person("Павелъ", "Дмитріевъ", last_name_orig="Орловъ", status="ученик окончивший курс Владимирской Духовной Семинарии"),
                                    bride=person("Елена", "Тихонова", last_name_orig="Экземплярская", status=PRIEST_DAUGHTER_MAIDEN),
                                    groom_age=23, bride_age=16,
-                                   groom_marriage_num=1, bride_marriage_num=1, witness1=person("Іоаннъ", last_name_orig="Казанскій", residence="Домнино", status=PRIEST, side=Side.GROOM), witness2=person("Ѳедоръ", "Алексѣевъ", "Авроровъ", residence="Воютино", status=PRIEST, side=Side.GROOM), witness3=person("Ѳедоръ", last_name_orig="Помиловъ", residence="Деняпино", status=PRIEST, side=Side.BRIDE), witness4=person("Максимъ", last_name_orig="Бузиновъ", residence="Воютино", status=DEACON, side=Side.BRIDE, comment="фамилия читается неуверенно")),
+                                   groom_marriage_num=1, bride_marriage_num=1, witness1=person("Іоаннъ", last_name_orig="Казанскій", residence="Домнино", status=PRIEST, side=Side.GROOM), witness2=person("Ѳедоръ", "Алексѣевъ", "Авроровъ", residence="Воютино", status=PRIEST, side=Side.GROOM), witness3=person("Ѳедоръ", last_name_orig="Помиловъ", residence="Деняпино", status=PRIEST, side=Side.BRIDE), witness4=person("Михаилъ", last_name_orig="Бузиновъ", residence="Воютино", status=DEACON, side=Side.BRIDE, comment="фамилия читается неуверенно")),
                           ),
           ),
     defaults=DEFAULTS,

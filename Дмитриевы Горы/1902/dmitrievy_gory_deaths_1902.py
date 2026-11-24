@@ -1,6 +1,6 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, Relationship, death, death_month,
                           death_records, page, person, relative)
-from verso.ru.dsl.causes_of_death import PLEURISY, WEAKNESS
+from verso.ru.dsl.causes_of_death import DEBILITY, PLEURISY
 from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, SOLDIER
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1902 г.,
@@ -21,7 +21,7 @@ from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, SOLDIER
 # соответствие блоков recto записям verso проверено по двум якорям на каждой
 # из трёх страниц, поэтому причины смерти в запись заводятся.
 #
-# reviewed=False: read once from the scans, not yet checked back against them.
+# Вычитано владельцем на сервере 16–18.11.2026: № ж3, № ж18, № ж39 (и второй волны № ж31).
 
 DEFAULTS = RecordDefaults(residence="Дмитриевы Горы", status_male=PEASANT_MALE,
                           status_female=PEASANT_FEMALE)
@@ -71,26 +71,29 @@ dmitrievy_gory_deaths_1902 = death_records(
                              cause_of_death=PLEURISY),
                        ),
           ),
-    *page("61об", reviewed=False,
+    *page("61об",
           *death_month(Month.NOVEMBER,
                        # девочка, рождённая **3 ноября 1902 г.** (запись о рождении № ж60, л. 78об):
                        # одиннадцать дней сходятся день в день, что для этого писца редкая точность. Первый
                        # известный ребёнок **Андрея Димитриевича** двора 5 и первое свидетельство, что он
                        # женат уже в 1902 г.; следующий его ребёнок в корпусе — сын Иоанн 1908 г. Звание отца
-                       # — «поступившій въ военную службу изъ крестьянъ», то есть он только что призван
+                       # — «поступившій въ военную службу изъ крестьянъ», то есть он только что призван ✅
+                       # Вычитано владельцем 18.11.2026: причина — «слабосилие»; сведена со своим рождением
                        death(39, Gender.FEMALE, 14, 16,
                              deceased=person("Матрона"), age="11 дней",
-                             relatives=[relative(person("Андрей", "Димитриев", last_name_orig="Кекев", status="поступивший в военную службу"), Relationship.FATHER)],
-                             cause_of_death=WEAKNESS),
+                             relatives=[relative(person("Андрей", "Дмитріевъ", last_name_orig="Кекевъ", status=SOLDIER, comment="поступивший в военную службу из крестьян"), Relationship.FATHER)],
+                             cause_of_death=DEBILITY),
                        ),
           ),
-    # Вторая волна (08.11.2026): дети замужних дочерей Кекевых, найденные по имени мужа. reviewed=False.
-    *page("60об", reviewed=False,
+    # Вторая волна (08.11.2026): дети замужних дочерей Кекевых, найденные по имени мужа. № ж31 вычитан 18.11.2026.
+    *page("60об",
           *death_month(Month.SEPTEMBER,
-                       # Анна — дочь Николая Васильевича Горбачева и Марфы Максимовны Кекевой, род. 30.08.1902 (ч. 1, № ж45)
+                       # Анна — дочь Николая Васильевича Горбачева и Марфы Максимовны Кекевой, род. 30.08.1902 (ч. 1, № ж45); «2 нед» — день в
+                       # день; ✅ вычитано 18.11.2026 (причина — «слабосилие»), сведена со своим рождением
                        death(31, Gender.FEMALE, 15, 17,
                              deceased=person("Анна"), age="2 нед",
-                             relatives=[relative(person("Николай", "Васильевъ", last_name_orig="Горбачевъ"), Relationship.FATHER)]),
+                             relatives=[relative(person("Николай", "Василіевъ", last_name_orig="Горбачевъ"), Relationship.FATHER)],
+                             cause_of_death=DEBILITY),
                        ),
           ),
     defaults=DEFAULTS,

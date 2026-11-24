@@ -2,7 +2,7 @@ from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, bir
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_SON,
                                    PEASANT_SPOUSE, PEASANT_WIDOW, PEASANT_ZHONKA, SOLDIER,
-                                   SOLDIER_SON)
+                                   SOLDIER_SON, SOLDIER_ZHONKA)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1906 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.**198**, лл. 288–312об
@@ -154,7 +154,7 @@ dmitrievy_gory_births_1906 = birth_records(
                              father=person("Андрей", "Иоаннов", last_name_orig="Кекев"),
                              mother=person("Евфросиния", "Афанасиева"),
                              god_parent1=person("Петр", "Георгиев", last_name_orig="Шимарянов"),
-                             god_parent2=person("Евдокия", "Иоаннова", last_name_orig="Орехова", status="солдатская женка")),
+                             god_parent2=person("Евдокия", "Иоаннова", last_name_orig="Орехова", status=SOLDIER_ZHONKA)),
                        ),
           ),
     *page("310об", reviewed=False,
@@ -171,7 +171,7 @@ dmitrievy_gory_births_1906 = birth_records(
                              father=person("Селиверст", "Алексиев", last_name_orig="Кекев"),
                              mother=person("Евдокия", "Игнатиева"),
                              god_parent1=person("Иаков", "Селиверстов", last_name_orig="Кекев", status=PEASANT_SON),
-                             god_parent2=person("Екатерина", "Елизарова", last_name_orig="Пупкова", status="солдатская женка")),
+                             god_parent2=person("Екатерина", "Елизарова", last_name_orig="Пупкова", status=SOLDIER_ZHONKA)),
                        # САМАЯ РАННЯЯ запись пары — на три года раньше 1909 г. (л. 191об), — и НОВЫЙ сын.
                        # Восприемник **Андрей Игнатиев Кекев** по отчеству брат отца; он же крестит у Михаила
                        # Феодорова в феврале того же года (запись № ж11). Второй из трёх кекевских младенцев,

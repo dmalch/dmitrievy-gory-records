@@ -5,15 +5,6 @@
 # Изменённая без вычитки запись остаётся на Geni, только если её строку перепривязать
 # (`make review-ratchet-rebind`): тот же вызов, номер, пол и лист, строка на строку.
 # файл	отпечаток	запись
-1902/dmitrievy_gory_births_1902.py	14e0e4f55fe1df8c	birth 14 м, л. 67об
-1902/dmitrievy_gory_births_1902.py	6533e32b89d46405	birth 19 м, л. 67об
-1902/dmitrievy_gory_births_1902.py	6ac993707d434523	birth 47 ж, л. 75об
-1902/dmitrievy_gory_births_1902.py	cbcacf13323d87f8	birth 60 ж, л. 78об
-1902/dmitrievy_gory_births_1902.py	8ad03b2f14971dc1	birth 62 ж, л. 78об
-1902/dmitrievy_gory_births_1902.py	fcc5d99d2322abd6	birth 70 ж, л. 80об
-1902/dmitrievy_gory_deaths_1902.py	97df8aff6cbf6bda	death 39 ж, л. 61об
-1902/dmitrievy_gory_marriages_1902.py	853accbdd02c41dc	marriage 14, л. 84об
-1902/dmitrievy_gory_marriages_1902.py	95eaba384b72ec9d	marriage 23, л. 86об
 1903/dmitrievy_gory_births_1903.py	0a800068f9ba08a7	birth 3 ж, л. 31об
 1903/dmitrievy_gory_births_1903.py	c61276a55e3c8a64	birth 18 ж, л. 34об
 1903/dmitrievy_gory_births_1903.py	e88558e0c8cbf6cb	birth 20 ж, л. 34об
@@ -46,7 +37,7 @@
 1905/dmitrievy_gory_births_1905.py	e9e7a7b4efa58b87	birth 13 ж, л. 251об
 1905/dmitrievy_gory_births_1905.py	52d667746f5c56cb	birth 10 м, л. 252об
 1905/dmitrievy_gory_births_1905.py	983fbec88d92980a	birth 26 ж, л. 254об
-1905/dmitrievy_gory_births_1905.py	364d37b08d52f07d	birth 47 ж, л. 262об
+1905/dmitrievy_gory_births_1905.py	4e40fb893d4d79fd	birth 47 ж, л. 262об
 1905/dmitrievy_gory_births_1905.py	319d86a6fa5d491a	birth 51 м, л. 263об
 1905/dmitrievy_gory_births_1905.py	6c5a2e845290aae0	birth 62 ж, л. 265об
 1905/dmitrievy_gory_deaths_1905.py	5f068388e31deca5	death 5 м, л. 278об
@@ -64,8 +55,8 @@
 1906/dmitrievy_gory_births_1906.py	0221d4a7b74ba10e	birth 19 ж, л. 295об
 1906/dmitrievy_gory_births_1906.py	6491f9c3b58c906f	birth 50 м, л. 304об
 1906/dmitrievy_gory_births_1906.py	6c6733e3c7f8cc0d	birth 54 м, л. 305об
-1906/dmitrievy_gory_births_1906.py	de14ce0891bfc573	birth 46 ж, л. 306об
-1906/dmitrievy_gory_births_1906.py	915ab6b175916b4c	birth 66 ж, л. 310об
+1906/dmitrievy_gory_births_1906.py	02cd1925841ce828	birth 46 ж, л. 306об
+1906/dmitrievy_gory_births_1906.py	760a8d8788e14ecb	birth 66 ж, л. 310об
 1906/dmitrievy_gory_births_1906.py	86852e1075ecef41	birth 72 м, л. 310об
 1906/dmitrievy_gory_births_1906.py	3b0768ccab9a03e0	birth 74 м, л. 310об
 1906/dmitrievy_gory_deaths_1906.py	c2128acc602cb81f	death 28 ж, л. 327об
@@ -74,7 +65,7 @@
 1906/dmitrievy_gory_marriages_1906.py	ae27a2b46f370c53	marriage 5, л. 313об
 1907/dmitrievy_gory_births_1907.py	b9030018dcf43757	birth 2 ж, л. 334об
 1907/dmitrievy_gory_births_1907.py	636d7e8eaa9e42e5	birth 10 ж, л. 337об
-1907/dmitrievy_gory_births_1907.py	2a11e825dbd1b14e	birth 29 м, л. 344об
+1907/dmitrievy_gory_births_1907.py	6042d0b7f6ab3084	birth 29 м, л. 344об
 1907/dmitrievy_gory_births_1907.py	b79cda5861a8ffbf	birth 64 ж, л. 354об
 1907/dmitrievy_gory_births_1907.py	6e4da42c0b882bdd	birth 82 ж, л. 360об
 1907/dmitrievy_gory_deaths_1907.py	ed49458d0699047c	death 3 м, л. 369об

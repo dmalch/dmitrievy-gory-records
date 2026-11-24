@@ -2,7 +2,7 @@ from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, bir
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_SON,
                                    PEASANT_SPOUSE, PEASANT_WIDOW, PEASANT_WIFE, PEASANT_ZHONKA,
-                                   SOLDIER)
+                                   SOLDIER, SOLDIER_LEGAL_WIFE, SOLDIER_ZHONKA)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1899 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.**197**, лл. 298–317
@@ -116,7 +116,7 @@ dmitrievy_gory_births_1899 = birth_records(
                              father=person("Андрей", "Іоанновъ", last_name_orig="Кекевъ"),
                              mother=person("Наталія", "Евфиміева", status=PEASANT_WIFE),
                              god_parent1=person("Симеонъ", "Іоанновъ", last_name_orig="Кекевъ", status=PEASANT_SON),
-                             god_parent2=person("Марія", "Василіева", last_name_orig="Кекева", status="солдатская женка")),
+                             god_parent2=person("Марія", "Василіева", last_name_orig="Кекева", status=SOLDIER_ZHONKA)),
                        ),
           ),
     *page("302об",
@@ -134,7 +134,7 @@ dmitrievy_gory_births_1899 = birth_records(
                        birth(10, Gender.FEMALE, 6, 7,
                              child=person("Матрона"),
                              father=person("Михаилъ", "Ѳеодоровъ", last_name_orig="Кекевъ", status=SOLDIER, comment="запасный солдат"),
-                             mother=person("Марія", "Саввина", status="законная жена солдата"),
+                             mother=person("Марія", "Саввина", status=SOLDIER_LEGAL_WIFE),
                              god_parent1=person("Максимъ", "Ѳеодоровъ", last_name_orig="Абашинъ", status=PEASANT_SON),
                              god_parent2=person("Марія", "Ѳеодорова", last_name_orig="Орѣхова", status=PEASANT_ZHONKA, comment="фамилия записана как «Кекева» в скобках и исправлена на «Орехова»")),
                        # ⚠⚠ **«Ѳеодоръ Іоанновъ КЕКЕВЪ ТОЖЪ ЗЕМСКОВЪ» — третий год подряд с двойной фамилией**
@@ -268,7 +268,7 @@ dmitrievy_gory_births_1899 = birth_records(
                        birth(27, Gender.FEMALE, 4, 5,
                              child=person("Марія"),
                              father=person("Григорій", "Павловъ", last_name_orig="Кекевъ", status=SOLDIER, comment="находящийся на военной службе солдат; тож Кузин"),
-                             mother=person("Іулитта", "Максимова", status="законная жена солдата"),
+                             mother=person("Іулитта", "Максимова", status=SOLDIER_LEGAL_WIFE),
                              god_parent1=person("Димитрій", "Павловъ", last_name_orig="Орловъ", status="студент Харьковского университета"),
                              god_parent2=person("Елена", "Діонисіева", last_name_orig="Кузина", status=PEASANT_WIDOW)),
                        ),
@@ -300,7 +300,7 @@ dmitrievy_gory_births_1899 = birth_records(
                              father=person("Сильвестръ", "Алексіевъ", last_name_orig="Кекевъ"),
                              mother=person("Евдокія", "Игнатіева", status=PEASANT_WIFE),
                              god_parent1=person("Петръ", "Алексіевъ", last_name_orig="Кекевъ", status=PEASANT_SON),
-                             god_parent2=person("Евфимія", "Игнатіева", last_name_orig="Кекева", status="солдатская женка")),
+                             god_parent2=person("Евфимія", "Игнатіева", last_name_orig="Кекева", status=SOLDIER_ZHONKA)),
                        ),
           ),
     *page("315об",
@@ -320,7 +320,7 @@ dmitrievy_gory_births_1899 = birth_records(
                        birth(68, Gender.MALE, 3, 5,
                              child=person("Іоаннъ"),
                              father=person("Георгій", "Іаковлевъ", last_name_orig="Родинъ", status=SOLDIER, comment="запасный солдат"),
-                             mother=person("Агафія", "Стефанова", status="законная жена солдата"),
+                             mother=person("Агафія", "Стефанова", status=SOLDIER_LEGAL_WIFE),
                              god_parent1=person("Андрей", "Ильинъ", last_name_orig="Филинъ", status=PEASANT_SON),
                              god_parent2=person("Екатерина", "Іаковлева", last_name_orig="Денискина", status=PEASANT_ZHONKA)),
                        ),

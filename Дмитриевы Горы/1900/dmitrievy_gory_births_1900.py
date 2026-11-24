@@ -1,7 +1,8 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_SON,
-                                   PEASANT_WIFE, PEASANT_ZHONKA, SOLDIER, SOLDIER_SON)
+                                   PEASANT_WIFE, PEASANT_ZHONKA, SOLDIER, SOLDIER_LEGAL_WIFE,
+                                   SOLDIER_SON)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1900 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.**198**, лл. 1–17об
@@ -204,7 +205,7 @@ dmitrievy_gory_births_1900 = birth_records(
                        birth(53, Gender.MALE, 20, 22,
                              child=person("Дмитрій"),
                              father=person("Алексій", "Флоровъ", last_name_orig="Кекевъ", status=SOLDIER, comment="запасный солдат"),
-                             mother=person("Евдокія", "Миронова", status="законная жена солдата"),
+                             mother=person("Евдокія", "Миронова", status=SOLDIER_LEGAL_WIFE),
                              god_parent1=person("Алексій", "Іосифовъ", last_name_orig="Пупковъ"),
                              god_parent2=person("Марфа", "Михайлова", last_name_orig="Кочеткова", status=PEASANT_MAIDEN)),
                        # **Елискины, не наши** (вычитка владельца 13.11.2026). До вычитки запись читалась «Іоаннъ
