@@ -1,6 +1,7 @@
 from verso.ru.dsl import (Month, RecordDefaults, marriage, marriage_month, marriage_records, page,
                           person)
-from verso.ru.dsl.statuses import PEASANT_DAUGHTER, PEASANT_FEMALE, PEASANT_MALE, PEASANT_SON
+from verso.ru.dsl.statuses import (PEASANT_DAUGHTER, PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE,
+                                   PEASANT_SON)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1903 г.,
 # часть вторая «О бракосочетавшихся». ГАВО ф.590 оп.12 д.**198**. 19 браков.
@@ -40,7 +41,7 @@ DEFAULTS = RecordDefaults(residence="Дмитриевы Горы", status_male=P
 dmitrievy_gory_marriages_1903 = marriage_records(
     "ГАВО", "590", "12", "198", "Дмитриевы Горы", "Покровская",
     1903,
-    *page("30об", reviewed=False,
+    *page("30об",
           *marriage_month(Month.OCTOBER,
                           # ЭТО **Марья Егоровна** двора 5 переписи 1897 г. — дочь Георгия (Егора) Максимовича
                           # и Надежды Дмитриевой, сестра Евфимия Георгиевича. В переписи ей 10 лет, здесь 17,
@@ -49,9 +50,9 @@ dmitrievy_gory_marriages_1903 = marriage_records(
                           # роднятся с Кекевыми не впервые: через два года, 2 октября 1905 г., Пётр Георгиев
                           # Шимарянов возьмёт Александру Иоанновну Кекеву (брак № 8, л. 271об)
                           marriage(7, 3,
-                                   groom=person("Феодор", "Филиппов", last_name_orig="Шимарянов", status=PEASANT_SON),
+                                   groom=person("Ѳеодоръ", "Филипповъ", last_name_orig="Шимаряновъ", status=PEASANT_SON),
                                    groom_marriage_num=1, groom_age=18,
-                                   bride=person("Мария", "Георгиева", last_name_orig="Кекева", status=PEASANT_DAUGHTER),
+                                   bride=person("Марія", "Георгіева", last_name_orig="Кекева", status=PEASANT_MAIDEN),
                                    bride_marriage_num=1, bride_age=17),
                           # ВЕНЧАНИЕ **Григория Андреевича** двора 7 (сын Андрея Ивановича Кикева), и оно
                           # решает два вопроса разом. Первое: у его жены наконец есть **девичья фамилия —
@@ -71,9 +72,9 @@ dmitrievy_gory_marriages_1903 = marriage_records(
                           # рядом с Кекевыми и в части первой: Евфимий Алексиев Залепин крестит сына Андрея
                           # Иоанновича (запись о рождении № м42, л. 48)
                           marriage(11, 3,
-                                   groom=person("Григорий", "Андреев", last_name_orig="Кекев", status=PEASANT_SON),
-                                   groom_marriage_num=1, groom_age="19 лет 2 мес",
-                                   bride=person("Екатерина", "Васильева", last_name_orig="Залепина", status=PEASANT_DAUGHTER),
+                                   groom=person("Григорій", "Андреевъ", last_name_orig="Кекевъ", status=PEASANT_SON),
+                                   groom_marriage_num=1, groom_age="19 лет 0 мес",
+                                   bride=person("Екатерина", "Василіева", last_name_orig="Залетина", status=PEASANT_DAUGHTER),
                                    bride_marriage_num=1, bride_age=21),
                           ),
           ),

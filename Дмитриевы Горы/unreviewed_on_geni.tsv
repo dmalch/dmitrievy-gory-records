@@ -5,18 +5,6 @@
 # Изменённая без вычитки запись остаётся на Geni, только если её строку перепривязать
 # (`make review-ratchet-rebind`): тот же вызов, номер, пол и лист, строка на строку.
 # файл	отпечаток	запись
-1903/dmitrievy_gory_births_1903.py	0a800068f9ba08a7	birth 3 ж, л. 31об
-1903/dmitrievy_gory_births_1903.py	c61276a55e3c8a64	birth 18 ж, л. 34об
-1903/dmitrievy_gory_births_1903.py	e88558e0c8cbf6cb	birth 20 ж, л. 34об
-1903/dmitrievy_gory_births_1903.py	823daf69801f3aae	birth 20 м, л. 36об
-1903/dmitrievy_gory_births_1903.py	ecb17762207e9a70	birth 43 ж, л. 47об
-1903/dmitrievy_gory_births_1903.py	df56383077fa326d	birth 42 м, л. 47об
-1903/dmitrievy_gory_deaths_1903.py	ab32523f9c40ee2b	death 24 м, л. 151об
-1903/dmitrievy_gory_deaths_1903.py	03d4866777c726dd	death 27 м, л. 151об
-1903/dmitrievy_gory_deaths_1903.py	2248976d415a9046	death 45 ж, л. 153об
-1903/dmitrievy_gory_deaths_1903.py	5f359e14d49f83bd	death 34 м, л. 153об
-1903/dmitrievy_gory_marriages_1903.py	15cff4f34a6543a8	marriage 7, л. 30об
-1903/dmitrievy_gory_marriages_1903.py	35b632ea55f2c8ca	marriage 11, л. 30об
 1904/dmitrievy_gory_births_1904.py	6dcd84c008e845e0	birth 5 ж, л. 214об
 1904/dmitrievy_gory_births_1904.py	c6cac69940b04b19	birth 13 ж, л. 215об
 1904/dmitrievy_gory_births_1904.py	f47766f3315924b9	birth 25 м, л. 220об

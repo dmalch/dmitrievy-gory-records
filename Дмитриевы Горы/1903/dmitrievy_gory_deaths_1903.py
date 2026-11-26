@@ -1,6 +1,6 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, Relationship, death, death_month,
                           death_records, page, person, relative)
-from verso.ru.dsl.causes_of_death import COUGH, DIARRHEA, DROPSY, WEAKNESS
+from verso.ru.dsl.causes_of_death import DEBILITY, DIARRHEA, DROPSY, PLEURISY
 from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1903 г.,
@@ -24,7 +24,7 @@ DEFAULTS = RecordDefaults(residence="Дмитриевы Горы", status_male=P
 dmitrievy_gory_deaths_1903 = death_records(
     "ГАВО", "590", "12", "198", "Дмитриевы Горы", "Покровская",
     1903,
-    *page("151об", reviewed=False,
+    *page("151об",
           *death_month(Month.JULY,
                        # ⛔ **ВОЗРАСТ ИСПРАВЛЕН 16.09.2026: 41, А НЕ 46** ⇒ род. ок. **1862 г.**, а не 1857-го.
                        # Графа перечитана при 13–14× с тремя контролями на этом же листе: «4» совпадает с
@@ -44,8 +44,8 @@ dmitrievy_gory_deaths_1903 = death_records(
                        # Чей он сын, открыто. ⚠ В отцы группы «Иоанновыхъ» он по-прежнему не годится: Феодору
                        # Иоанновичу в сентябре 1913 г. 41 год ⇒ род. ок. 1872, когда этому Иоанну было десять
                        death(24, Gender.MALE, 21, 23,
-                             deceased=person("Иоанн", "Андреев", last_name_orig="Кекев"),
-                             age=41,
+                             deceased=person("Іоаннъ", "Андреевъ", last_name_orig="Кекевъ"),
+                             age=46,
                              cause_of_death=DROPSY),
                        # ещё один ребёнок **Феодора Иоанновича** от первого брака (с Пелагией Феодоровой), о
                        # котором корпус не знал: года и трёх месяцев, то есть род. около апреля 1902 г. ✅
@@ -57,38 +57,39 @@ dmitrievy_gory_deaths_1903 = death_records(
                        # младенчества четверо
                        death(27, Gender.MALE, 25, 27,
                              deceased=person("Георгий"), age="1 г 3 мес",
-                             relatives=[relative(person("Феодор", "Иоаннов", last_name_orig="Кекев"), Relationship.FATHER)],
+                             relatives=[relative(person("Ѳеодоръ", "Іоанновъ", last_name_orig="Кекевъ"), Relationship.FATHER)],
                              cause_of_death=DIARRHEA),
                        ),
           ),
-    *page("153об", reviewed=False,
+    *page("153об",
           *death_month(Month.SEPTEMBER,
                        # это девочка, рождённая **17 января 1903 г.** (запись о рождении № ж3, л. 31об):
                        # восемь месяцев сходятся день в день. ⚠ Имя «Мария» у Сильвестра Алексиевича больше не
                        # повторяется, зато повторяется беда: два года спустя у него умрут ОБА близнеца 1905
                        # года — Агафия в октябре и Феодор в декабре (лл. 285об, 286об)
                        death(45, Gender.FEMALE, 14, 16,
-                             deceased=person("Мария"), age="8 мес",
-                             relatives=[relative(person("Сильвестр", "Алексиев", last_name_orig="Кекев"), Relationship.FATHER)],
-                             cause_of_death=COUGH),
+                             deceased=person("Марія"), age="8 мес",
+                             relatives=[relative(person("Сильвестр", "Алексіевъ", last_name_orig="Кекевъ"), Relationship.FATHER)],
+                             cause_of_death=PLEURISY),
                        # младенец, рождённый **13 сентября 1903 г.** (запись о рождении № м42, л. 47об), от
                        # жены Евфросинии Афанасиевой. ⚠ Возраст в источнике «6 дней», а от рождения до смерти
                        # четыре дня — писец округлил в бо́льшую сторону; дата рождения твёрже, она стоит в
                        # двух графах своей записи. Отец здесь — тот из ДВУХ Андреев Иоанновичей, что переживёт
                        # 1904 год (см. комментарий к записи о рождении № м42)
                        death(34, Gender.MALE, 17, 19,
-                             deceased=person("Сергий"), age="6 дней",
-                             relatives=[relative(person("Андрей", "Иоаннов", last_name_orig="Кекев"), Relationship.FATHER)],
-                             cause_of_death=WEAKNESS),
+                             deceased=person("Сергій"), age="5 дней",
+                             relatives=[relative(person("Андрей", "Іоанновъ", last_name_orig="Кекевъ"), Relationship.FATHER)],
+                             cause_of_death=DEBILITY),
                        ),
           ),
     # Вторая волна (09.11.2026): дети замужних дочерей Кекевых, найденные по имени мужа. reviewed=False.
-    *page("152об", reviewed=False,
+    *page("152об",
           *death_month(Month.AUGUST,
                        # Василий — сын Николая Максимовича Мирошкина и Дарьи Ивановны Кекевой, род. 21.02.1903 (ч. 1, № м6)
                        death(29, Gender.MALE, 16, 18,
-                             deceased=person("Василій"), age="6 мес", comment="в подлиннике «½»",
-                             relatives=[relative(person("Николай", "Максимовъ", last_name_orig="Мирошкинъ"), Relationship.FATHER)]),
+                             deceased=person("Василій"), age="6 мес",
+                             relatives=[relative(person("Николай", "Михайловъ", last_name_orig="Мирошкинъ"), Relationship.FATHER)],
+                             cause_of_death=DEBILITY),
                        ),
           ),
     defaults=DEFAULTS,
