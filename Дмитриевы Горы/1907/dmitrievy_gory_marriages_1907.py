@@ -1,6 +1,7 @@
 from verso.ru.dsl import (Month, RecordDefaults, marriage, marriage_month, marriage_records, page,
                           person)
-from verso.ru.dsl.statuses import PEASANT_DAUGHTER, PEASANT_FEMALE, PEASANT_MALE, PEASANT_SON
+from verso.ru.dsl.statuses import (PEASANT_DAUGHTER, PEASANT_FEMALE, PEASANT_MALE, PEASANT_SON,
+                                   SOLDIER)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1907 г.,
 # часть вторая «О бракосочетавшихся». ГАВО ф.590 оп.12 д.**198**, лл. 363–368об
@@ -47,7 +48,7 @@ dmitrievy_gory_marriages_1907 = marriage_records(
                                    bride_marriage_num=1, bride_age=19,
                                    witness1=person("Евфимий", "Васильев", last_name_orig="Горячев"),
                                    witness2=person("Иоанн", "Лавров", last_name_orig="Лужин"),
-                                   witness3=person("Максим", "Кириллин", last_name_orig="Залетнин", status="запасный солдат"),
+                                   witness3=person("Максим", "Кириллин", last_name_orig="Залетнин", status=SOLDIER, comment="запасный солдат"),
                                    witness4=person("Стефан", "Тимофеев", last_name_orig="Скрулетов")),
                           ),
           ),

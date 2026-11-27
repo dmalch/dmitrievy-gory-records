@@ -63,7 +63,7 @@ dmitrievy_gory_births_1908 = birth_records(
                        # 1900-10-02.
                        birth(2, Gender.MALE, 3, 5,
                              child=person("Иоанн"),
-                             father=person("Андрей", "Димитриев", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Андрей", "Димитриев", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Елена", "Иродионова"),
                              god_parent1=person("Николай", "Димитриев", last_name_orig="Кекев", status=SOLDIER_SON)),
                        ),
@@ -120,9 +120,9 @@ dmitrievy_gory_births_1908 = birth_records(
                        # рождение 1895 № 43, 1895-09-13.
                        birth(20, Gender.FEMALE, 21, 23,
                              child=person("Мария"),
-                             father=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Мария", "Васильева"),
-                             god_parent1=person("Косма", "Васильев", last_name_orig="Горячев", status="запасный солдат"),
+                             god_parent1=person("Косма", "Васильев", last_name_orig="Горячев", status=SOLDIER, comment="запасный солдат"),
                              god_parent2=person("Мавра", "Матфиева", last_name_orig="Кекева", status=PEASANT_ZHONKA)),
                        ),
           ),

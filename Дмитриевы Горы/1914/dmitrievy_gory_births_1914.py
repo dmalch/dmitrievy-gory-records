@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_SON,
-                                   PEASANT_SPOUSE)
+                                   PEASANT_SPOUSE, SOLDIER)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1914 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.199, лл. 124об–141об.
@@ -26,7 +26,7 @@ dmitrievy_gory_births_1914 = birth_records(
           *birth_month(Month.MARCH,
                        birth(14, Gender.MALE, 7, 8,
                              child=person("Алексий"),
-                             father=person("Александр", "Димитриев", last_name_orig="Кикев", status="запасный солдат"),
+                             father=person("Александр", "Димитриев", last_name_orig="Кикев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Екатерина", "Андреева"),
                              god_parent1=person("Алексий", "Андреев", last_name_orig="Ремшин", status=PEASANT_SON),
                              god_parent2=person("Евдокия", "Васильева", last_name_orig="Шимаринова", status=PEASANT_MAIDEN),
@@ -37,7 +37,7 @@ dmitrievy_gory_births_1914 = birth_records(
                        # для сравнения «Николай Феодоровъ Никитаевъ» — у этого писца слово заметно длиннее
                        birth(15, Gender.MALE, 8, 9,
                              child=person("Иоанн"),
-                             father=person("Алексий", "Флоров", last_name_orig="Кикеев", status="запасный солдат"),
+                             father=person("Алексий", "Флоров", last_name_orig="Кикеев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Евдокия", "Миронова"),
                              god_parent1=person("Евфимий", "Васильев", last_name_orig="Горячев"),
                              god_parent2=person("Александра", "Алексиева", last_name_orig="Кикеева", status=PEASANT_MAIDEN),
@@ -53,7 +53,7 @@ dmitrievy_gory_births_1914 = birth_records(
                              child=person("Николай"),
                              father=person("Георгий", "Иоаннов", last_name_orig="Кекев"),
                              mother=person("Анна", "Иоаннова"),
-                             god_parent1=person("Максим", "Алексиев", last_name_orig="Залетин", status="запасный солдат"),
+                             god_parent1=person("Максим", "Алексиев", last_name_orig="Залетин", status=SOLDIER, comment="запасный солдат"),
                              god_parent2=person("Мария", "Георгиева", last_name_orig="Кекева", status=PEASANT_MAIDEN),
                              god_parent3=person("Мария", "Иоаннова", last_name_orig="Романова"),
                              comment="ДВОЙНЯ: Николай (№ м24) и Пелагия (№ ж15) записаны писцом ОДНОЙ строкой — "
@@ -64,15 +64,15 @@ dmitrievy_gory_births_1914 = birth_records(
                              child=person("Пелагия"),
                              father=person("Георгий", "Иоаннов", last_name_orig="Кекев"),
                              mother=person("Анна", "Иоаннова"),
-                             god_parent1=person("Максим", "Алексиев", last_name_orig="Залетин", status="запасный солдат"),
+                             god_parent1=person("Максим", "Алексиев", last_name_orig="Залетин", status=SOLDIER, comment="запасный солдат"),
                              god_parent2=person("Мария", "Георгиева", last_name_orig="Кекева", status=PEASANT_MAIDEN),
                              god_parent3=person("Мария", "Иоаннова", last_name_orig="Романова"),
                              comment="вторая половина двойни — см. запись № м24 той же строки"),
                        birth(17, Gender.FEMALE, 5, 6,
                              child=person("Елена"),
-                             father=person("Андрей", "Феодоров", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Андрей", "Феодоров", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Иулиания", "Иоаннова"),
-                             god_parent1=person("Феодор", "Андреев", last_name_orig="Царев", status="запасный солдат"),
+                             god_parent1=person("Феодор", "Андреев", last_name_orig="Царев", status=SOLDIER, comment="запасный солдат"),
                              god_parent2=person("Варвара", "Андреева", last_name_orig="Кекева", status=PEASANT_MAIDEN),
                              comment="восприемница Варвара Андреева по отчеству — сестра новорождённой"),
                        ),

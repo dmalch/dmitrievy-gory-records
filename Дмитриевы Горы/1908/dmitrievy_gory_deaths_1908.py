@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, Relationship, death, death_month,
                           death_records, page, person, relative)
 from verso.ru.dsl.causes_of_death import DIARRHEA, DROPSY, WHOOPING_COUGH
-from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, PEASANT_ZHONKA
+from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, PEASANT_ZHONKA, SOLDIER
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1908 г.,
 # часть третья «О умерших». ГАВО ф.590 оп.12 д.**198**, лл. 407–415об
@@ -66,7 +66,7 @@ dmitrievy_gory_deaths_1908 = death_records(
                        # — ещё дочь (л. 165об). Умерла в осеннюю волну коклюша
                        death(34, Gender.FEMALE, 28, 30,
                              deceased=person("Анна"), age="полтора года",
-                             relatives=[relative(person("Евфимий", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"), Relationship.FATHER)],
+                             relatives=[relative(person("Евфимий", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"), Relationship.FATHER)],
                              cause_of_death=WHOOPING_COUGH),
                        ),
           ),

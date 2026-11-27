@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, Relationship, death, death_month,
                           death_records, page, person, relative)
 from verso.ru.dsl.causes_of_death import SCARLATINA, WEAKNESS
-from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE
+from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, SOLDIER
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1912 г.,
 # часть третья «Объ умершихъ». ГАВО ф.590 оп.12 д.199, лл. 69об–78об.
@@ -22,7 +22,7 @@ dmitrievy_gory_deaths_1912 = death_records(
           *death_month(Month.SEPTEMBER,
                        death(27, Gender.MALE, 5, 7,
                              deceased=person("Павел"), age=2,
-                             relatives=[relative(person("Сергий", "Алексиев", last_name_orig="Кекев", status="запасный солдат"), Relationship.FATHER)],
+                             relatives=[relative(person("Сергий", "Алексиев", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"), Relationship.FATHER)],
                              cause_of_death=SCARLATINA,
                              comment="умер через две недели после рождения сестры Анны (запись о рождении № ж49, "
                                      "л. 52об). Родился 9 января 1910 г. — метрика ч. 1 № м1 того года, те же "
@@ -43,7 +43,7 @@ dmitrievy_gory_deaths_1912 = death_records(
           *death_month(Month.DECEMBER,
                        death(33, Gender.FEMALE, 22, 24,
                              deceased=person("Елена"),
-                             relatives=[relative(person("Андрей", "Феодоров", last_name_orig="Кекев", status="запасный солдат"), Relationship.FATHER)],
+                             relatives=[relative(person("Андрей", "Феодоров", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"), Relationship.FATHER)],
                              comment="это девочка, рождённая 21 мая 1912 — запись о рождении № ж26, л. 45об; на "
                                      "момент смерти ей семь месяцев, но графа «Лѣта» на этой последней странице "
                                      "не заполнена, и причина смерти не записана. В 1914 г. у той же пары "

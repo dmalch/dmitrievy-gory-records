@@ -1,8 +1,8 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_SON,
-                                   PEASANT_SPOUSE, PEASANT_WIDOW, PEASANT_ZHONKA, SOLDIER_GIRL,
-                                   SOLDIER_ZHONKA)
+                                   PEASANT_SPOUSE, PEASANT_WIDOW, PEASANT_ZHONKA, SOLDIER,
+                                   SOLDIER_GIRL, SOLDIER_ZHONKA)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1905 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.**198**, лл. 250–269
@@ -110,7 +110,7 @@ dmitrievy_gory_births_1905 = birth_records(
                        # марта 1908 г. (л. 388об), день в день через три года
                        birth(26, Gender.FEMALE, 21, 23,
                              child=person("Мария"),
-                             father=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Мария", "Васильева"),
                              god_parent1=person("Иаков", "Меркуриев", last_name_orig="Артамонов"),
                              god_parent2=person("Пелагия", "Никитина", last_name_orig="Пупкова", status=SOLDIER_GIRL)),

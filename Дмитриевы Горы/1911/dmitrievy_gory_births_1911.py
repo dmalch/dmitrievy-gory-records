@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_SON,
-                                   PEASANT_SPOUSE, PEASANT_ZHONKA, SOLDIER_WIFE)
+                                   PEASANT_SPOUSE, PEASANT_ZHONKA, SOLDIER, SOLDIER_WIFE)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1911 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.199, лл. 1об–22об.
@@ -47,7 +47,7 @@ dmitrievy_gory_births_1911 = birth_records(
                              child=person("Александр"),
                              father=person("Иоанн", "Димитриев", last_name_orig="Кекев"),
                              mother=person("Марфа", "Матвеева"),
-                             god_parent1=person("Андрей", "Димитриев", last_name_orig="Кекев", status="запасный солдат"),
+                             god_parent1=person("Андрей", "Димитриев", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              god_parent2=person("Екатерина", "Димитриева", last_name_orig="Шапаринова", status=SOLDIER_WIFE)),
                        ),
           ),
@@ -121,7 +121,7 @@ dmitrievy_gory_births_1911 = birth_records(
                              child=person("Екатерина"),
                              father=person("Григорий", "Андреев", last_name_orig="Кекев"),
                              mother=person("Екатерина", "Васильева"),
-                             god_parent1=person("Григорий", "Павлов", last_name_orig="Кузин", status="запасный солдат"),
+                             god_parent1=person("Григорий", "Павлов", last_name_orig="Кузин", status=SOLDIER, comment="запасный солдат"),
                              god_parent2=person("Анна", "Дамианова", last_name_orig="Кекева", status=PEASANT_ZHONKA)),
                        ),
           ),

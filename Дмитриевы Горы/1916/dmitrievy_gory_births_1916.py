@@ -31,7 +31,7 @@ dmitrievy_gory_births_1916 = birth_records(
                        # запись. Отчество восприемницы читается неуверенно («Николаева» или «Никонова»)
                        birth(17, Gender.MALE, 1, 1,
                              child=person("Николай"),
-                             father=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Мария", "Антониева"),
                              god_parent1=person("Стефан", "Ермилов", last_name_orig="Майоров", status=PEASANT_SON),
                              god_parent2=person("Евдокия", "Николаева", last_name_orig="Мирошкина", status=PEASANT_MAIDEN)),
@@ -41,7 +41,7 @@ dmitrievy_gory_births_1916 = birth_records(
           *birth_month(Month.JUNE,
                        birth(25, Gender.MALE, 8, 9,
                              child=person("Иоанн"),
-                             father=person("Андрей", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Андрей", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Евфросиния", "Алексиева"),
                              god_parent1=person("Димитрий", "Мартынов", last_name_orig="Бондарев", status=PEASANT_SON),
                              god_parent2=person("Параскева", "Николаева", last_name_orig="Мирошкина", status=PEASANT_ZHONKA),
@@ -70,7 +70,7 @@ dmitrievy_gory_births_1916 = birth_records(
                        # Иоанн Тимофеевич Савин — сам жених Марии Ипполитовны Кекевой (брак 1916 № 1)
                        birth(9, Gender.FEMALE, 20, 21,
                              child=person("Евдокія"),
-                             father=person("Павелъ", "Ипполитовъ", last_name_orig="Кузнецовъ", status="запасный солдат"),
+                             father=person("Павелъ", "Ипполитовъ", last_name_orig="Кузнецовъ", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Марія", "Михайлова", status=PEASANT_SPOUSE),
                              god_parent1=person("Іоаннъ", "Тимофеевъ", last_name_orig="Савинъ", status=PEASANT_SON),
                              god_parent2=person("Марія", "Іоаннова", last_name_orig="Легкова", status=PEASANT_MAIDEN, comment="отчество читается неуверенно")),

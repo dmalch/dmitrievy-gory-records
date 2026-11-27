@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MALE, PEASANT_MAIDEN, PEASANT_SON,
-                                   PEASANT_SPOUSE, PEASANT_ZHONKA)
+                                   PEASANT_SPOUSE, PEASANT_ZHONKA, SOLDIER)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1915 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.199, лл. 158об–179об.
@@ -25,7 +25,7 @@ dmitrievy_gory_births_1915 = birth_records(
           *birth_month(Month.MARCH,
                        birth(22, Gender.FEMALE, 14, 15,
                              child=person("Александра"),
-                             father=person("Сергий", "Алексиев", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Сергий", "Алексиев", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Екатерина", "Алексиева"),
                              god_parent1=person("Иоанн", "Феодоров", last_name_orig="Маслихин", status=PEASANT_SON),
                              god_parent2=person("Евдокия", "Петрова", last_name_orig="Кондрушина", status=PEASANT_SPOUSE),
@@ -52,7 +52,7 @@ dmitrievy_gory_births_1915 = birth_records(
           *birth_month(Month.OCTOBER,
                        birth(69, Gender.MALE, 6, 7,
                              child=person("Иоанн"),
-                             father=person("Андрей", "Игнатиев", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Андрей", "Игнатиев", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Татиана", "Иоаннова"),
                              god_parent1=person("Василий", "Алексиев", last_name_orig="Иванов", status=PEASANT_SON),
                              god_parent2=person("Параскева", "Петрова", last_name_orig="Маслихина", status=PEASANT_ZHONKA),
@@ -92,7 +92,7 @@ dmitrievy_gory_births_1915 = birth_records(
                        # 6.10.1915 двух месяцев (ч. 3, № м30)
                        birth(56, Gender.MALE, 8, 9,
                              child=person("Іоаннъ"),
-                             father=person("Петръ", "Георгіевъ", last_name_orig="Шимаряновъ", status="запасный солдат"),
+                             father=person("Петръ", "Георгіевъ", last_name_orig="Шимаряновъ", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Александра", "Іоаннова", status=PEASANT_SPOUSE),
                              god_parent1=person("Іоаннъ", "Филипповъ", last_name_orig="Шимаряновъ", status=PEASANT_SON),
                              god_parent2=person("Марія", "Косьмина", last_name_orig="Хохлова", status=PEASANT_MAIDEN)),

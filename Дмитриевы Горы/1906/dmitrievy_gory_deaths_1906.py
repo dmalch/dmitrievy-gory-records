@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, Relationship, death, death_month,
                           death_records, page, person, relative)
 from verso.ru.dsl.causes_of_death import SCARLATINA
-from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE
+from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, SOLDIER
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1906 г.,
 # часть третья «О умерших». ГАВО ф.590 оп.12 д.**198**, лл. 320–333об
@@ -30,7 +30,7 @@ dmitrievy_gory_deaths_1906 = death_records(
           *death_month(Month.OCTOBER,
                        death(28, Gender.FEMALE, 18, 20,
                              deceased=person("Матрона"), age="8 мес",
-                             relatives=[relative(person("Михаил", "Феодоров", last_name_orig="Кекев", status="запасный солдат"), Relationship.FATHER)],
+                             relatives=[relative(person("Михаил", "Феодоров", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"), Relationship.FATHER)],
                              cause_of_death=SCARLATINA,
                              comment="это девочка, рождённая 20 февраля того же года (запись о рождении № ж11, "
                                      "л. 293об): оба конца жизни в одной книге, и возраст сходится день в день. "
@@ -42,7 +42,7 @@ dmitrievy_gory_deaths_1906 = death_records(
                        # раньше — рождение 1893 № 10, 1893-04-08.
                        death(30, Gender.FEMALE, 22, 25,
                              deceased=person("Евдокия"), age="2 г 9 мес",
-                             relatives=[relative(person("Михаил", "Феодоров", last_name_orig="Кекев", status="запасный солдат"), Relationship.FATHER)],
+                             relatives=[relative(person("Михаил", "Феодоров", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"), Relationship.FATHER)],
                              cause_of_death=SCARLATINA),
                        ),
           ),
@@ -56,7 +56,7 @@ dmitrievy_gory_deaths_1906 = death_records(
                        # третья выжила
                        death(49, Gender.FEMALE, 5, 7,
                              deceased=person("Мария"), age=2,
-                             relatives=[relative(person("Евфимий", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"), Relationship.FATHER)],
+                             relatives=[relative(person("Евфимий", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"), Relationship.FATHER)],
                              cause_of_death=SCARLATINA),
                        ),
           ),

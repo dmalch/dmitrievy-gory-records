@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_SON,
-                                   PEASANT_SPOUSE, PEASANT_ZHONKA)
+                                   PEASANT_SPOUSE, PEASANT_ZHONKA, SOLDIER, UNTER_OFFICER)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1912 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.199, лл. 36об–60об.
@@ -26,9 +26,9 @@ dmitrievy_gory_births_1912 = birth_records(
           *birth_month(Month.FEBRUARY,
                        birth(11, Gender.FEMALE, 19, 20,
                              child=person("Клавдия"),
-                             father=person("Евфимий", "Иванов", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Евфимий", "Иванов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Мария", "Васильева"),
-                             god_parent1=person("Косма", "Петров", last_name_orig="Кохлов", status="старший унтер-офицер"),
+                             god_parent1=person("Косма", "Петров", last_name_orig="Кохлов", status=UNTER_OFFICER, comment="старший унтер-офицер"),
                              god_parent2=person("Мария", "Евфимиева", last_name_orig="Макарова", status="жена волостного писаря"),
                              comment="третье независимое подтверждение пары: «Марія Васильева» стоит женой Евфимия "
                                      "и здесь, и в 1913 г. (л. 96об), и в 1918 г. (л. 262об) — «Марія Антоніева» "
@@ -55,7 +55,7 @@ dmitrievy_gory_births_1912 = birth_records(
                              child=person("Феодор"),
                              father=person("Косма", "Романов", last_name_orig="Кекев"),
                              mother=person("Параскева", "Антипина"),
-                             god_parent1=person("Василий", "Иаковлев", last_name_orig="Залетин", status="запасный солдат"),
+                             god_parent1=person("Василий", "Иаковлев", last_name_orig="Залетин", status=SOLDIER, comment="запасный солдат"),
                              god_parent2=person("Анисия", "Павлова", last_name_orig="Кобзина", status=PEASANT_ZHONKA),
                              comment="этот мальчик умер 26 января 1913 в возрасте 1 года — запись о смерти № м9, "
                                      "л. 114об. Отчество матери здесь «Антипина», в 1913 г. «Антипова» — один "
@@ -77,7 +77,7 @@ dmitrievy_gory_births_1912 = birth_records(
           *birth_month(Month.AUGUST,
                        birth(49, Gender.FEMALE, 19, 20,
                              child=person("Анна"),
-                             father=person("Сергий", "Алексиев", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Сергий", "Алексиев", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Екатерина", "Алексиева"),
                              god_parent1=person("Стефан", "Григорьев", last_name_orig="Скурлетов"),
                              god_parent2=person("Татиана", "Филиппова", last_name_orig="Кандрушина", status=PEASANT_MAIDEN),

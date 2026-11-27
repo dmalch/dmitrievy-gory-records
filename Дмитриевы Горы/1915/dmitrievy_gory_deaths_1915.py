@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, Relationship, death, death_month,
                           death_records, page, person, relative)
 from verso.ru.dsl.causes_of_death import CONSUMPTION
-from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, PEASANT_WIDOW
+from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, PEASANT_WIDOW, SOLDIER
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1915 г.,
 # часть третья «Объ умершихъ». ГАВО ф.590 оп.12 д.199, лл. 219об–229об.
@@ -44,7 +44,7 @@ dmitrievy_gory_deaths_1915 = death_records(
                        # Иоанн — сын Петра Георгиевича Шимарянова и Александры Иоанновны Кекевой, род. 8.08.1915 (ч. 1, № м56)
                        death(30, Gender.MALE, 6, 8,
                              deceased=person("Іоаннъ"), age="2 мес",
-                             relatives=[relative(person("Петръ", "Георгіевъ", last_name_orig="Шимаряновъ", status="запасный солдат"), Relationship.FATHER)]),
+                             relatives=[relative(person("Петръ", "Георгіевъ", last_name_orig="Шимаряновъ", status=SOLDIER, comment="запасный солдат"), Relationship.FATHER)]),
                        ),
           ),
     *page("194об", reviewed=False,

@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, Relationship, death, death_month,
                           death_records, page, person, relative)
 from verso.ru.dsl.causes_of_death import WEAKNESS
-from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, PEASANT_WIDOW
+from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, PEASANT_WIDOW, SOLDIER
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1916 г.,
 # часть третья «Объ умершихъ». ГАВО ф.590 оп.12 д.199, лл. 219об–229об.
@@ -22,7 +22,7 @@ dmitrievy_gory_deaths_1916 = death_records(
           *death_month(Month.JUNE,
                        death(25, Gender.MALE, 17, 19,
                              deceased=person("Иоанн"), age="1 нед",
-                             relatives=[relative(person("Андрей", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"), Relationship.FATHER)],
+                             relatives=[relative(person("Андрей", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"), Relationship.FATHER)],
                              cause_of_death=WEAKNESS,
                              comment="это младенец, рождённый 8 июня 1916 — запись о рождении № 25, л. 206об"),
                        ),
@@ -50,7 +50,7 @@ dmitrievy_gory_deaths_1916 = death_records(
                        # Евдокия — дочь Павла Ипполитовича Кузнецова и Марии Михайловны Кекевой, род. 20.02.1916 (ч. 1, № ж9)
                        death(16, Gender.FEMALE, 23, 25,
                              deceased=person("Евдокія"), age="3 мес",
-                             relatives=[relative(person("Павелъ", "Ипполитовъ", last_name_orig="Кузнецовъ", status="запасный солдат"), Relationship.FATHER)]),
+                             relatives=[relative(person("Павелъ", "Ипполитовъ", last_name_orig="Кузнецовъ", status=SOLDIER, comment="запасный солдат"), Relationship.FATHER)]),
                        ),
           ),
     *page("229об", reviewed=False,

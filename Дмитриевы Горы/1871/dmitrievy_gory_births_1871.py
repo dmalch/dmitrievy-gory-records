@@ -2,7 +2,8 @@ from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, bir
                           person)
 from verso.ru.dsl.statuses import (DYACHOK_WIFE, KAZENNYJ_PEASANT_MALE, PEASANT_FEMALE,
                                    PEASANT_MALE, PEASANT_SON, PEASANT_SPOUSE, PEASANT_WIDOW,
-                                   PEASANT_ZHONKA, SOLDIER_SON, SOLDIER_SPOUSE, SOLDIER_WIFE)
+                                   PEASANT_ZHONKA, SOLDIER, SOLDIER_SON, SOLDIER_SPOUSE,
+                                   SOLDIER_WIFE)
 
 # Метрическая книга Покровской церкви с. Димитріевы Горы за 1871 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.**195**, лл. 1об–17об
@@ -114,7 +115,7 @@ dmitrievy_gory_births_1871 = birth_records(
                        # год называет Ѳоку Иванова, а этот год — Ѳоку Семенова. См. шапку файла
                        birth(1, Gender.MALE, 1, 1,
                              child=person("Василій", status=SOLDIER_SON),
-                             father=person("Харитонъ", "Ѳокинъ", residence="Кононово", status="находящийся в домовом отпуску рядовой солдат"),
+                             father=person("Харитонъ", "Ѳокинъ", residence="Кононово", status=SOLDIER, comment="находящийся в домовом отпуску рядовой солдат"),
                              mother=person("Марина", "Саввина", status=SOLDIER_SPOUSE),
                              god_parent1=person("Петръ", "Павловъ", residence="Кононово", status=KAZENNYJ_PEASANT_MALE),
                              god_parent2=person("Февронья", "Саввина", residence="Кононово", status=SOLDIER_WIFE)),

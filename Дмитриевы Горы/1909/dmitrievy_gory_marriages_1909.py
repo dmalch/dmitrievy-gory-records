@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Month, RecordDefaults, marriage, marriage_month, marriage_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_DAUGHTER, PEASANT_FEMALE, PEASANT_MALE, PEASANT_SON,
-                                   PEASANT_WIDOW, SOLDIER_DAUGHTER, SOLDIER_SON)
+                                   PEASANT_WIDOW, SOLDIER_DAUGHTER, SOLDIER_SON, UNTER_OFFICER)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1909 г.,
 # часть вторая «О бракосочетавшихся». ГАВО ф.590 оп.12 д.**198** — часть
@@ -92,7 +92,7 @@ dmitrievy_gory_marriages_1909 = marriage_records(
                           # л. 29 — это село венчает осенним мясоедом одним и тем же кругом поручителей; в
                           # запись он заводится один раз
                           marriage(21, 2,
-                                   groom=person("Максим", "Феодоров", last_name_orig="Костин", status="запасный старший унтер-офицер"),
+                                   groom=person("Максим", "Феодоров", last_name_orig="Костин", status=UNTER_OFFICER, comment="запасный старший унтер-офицер"),
                                    groom_marriage_num=2, groom_age=28,
                                    bride=person("Матрона", "Георгиева", last_name_orig="Кекева", status=PEASANT_DAUGHTER),
                                    bride_marriage_num=1, bride_age=20,

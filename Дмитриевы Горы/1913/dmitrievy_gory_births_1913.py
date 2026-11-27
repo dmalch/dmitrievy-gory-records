@@ -91,7 +91,7 @@ dmitrievy_gory_births_1913 = birth_records(
           *birth_month(Month.SEPTEMBER,
                        birth(53, Gender.MALE, 17, 18,
                              child=person("Иоанн"),
-                             father=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Мария", "Васильева"),
                              comment="ВОСПРИЕМНИКИ НЕДОСТУПНЫ: обращённый к л. 96об лист 97 занят вложенной "
                                      "выписью 1915 г. из чужой метрической книги. Жена «Марія Васильева» — как "
@@ -103,7 +103,7 @@ dmitrievy_gory_births_1913 = birth_records(
           *birth_month(Month.NOVEMBER,
                        birth(70, Gender.MALE, 7, 8,
                              child=person("Михаил"),
-                             father=person("Григорий", "Алексиев", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Григорий", "Алексиев", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Анна", "Дометианова"),
                              god_parent1=person("Иаков", "Сильвестров", last_name_orig="Кекев"),
                              god_parent2=person("Татиана", "Дометианова", last_name_orig="Горячева", status=PEASANT_MAIDEN),

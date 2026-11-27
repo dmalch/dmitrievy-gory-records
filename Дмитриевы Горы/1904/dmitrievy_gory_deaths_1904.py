@@ -1,6 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, Relationship, death, death_month,
                           death_records, page, person, relative)
-from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_WIDOW
+from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_WIDOW,
+                                   SOLDIER)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1904 г.,
 # часть третья «О умерших». ГАВО ф.590 оп.12 д.**198**, лл. 242–249об
@@ -93,7 +94,7 @@ dmitrievy_gory_deaths_1904 = death_records(
                        # ни одна
                        death(21, Gender.FEMALE, 3, 5,
                              deceased=person("Татиана"), age="1 г 8 мес",
-                             relatives=[relative(person("Евфимий", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"), Relationship.FATHER)]),
+                             relatives=[relative(person("Евфимий", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"), Relationship.FATHER)]),
                        ),
           ),
     *page("249об", reviewed=False,

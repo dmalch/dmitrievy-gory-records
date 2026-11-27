@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Month, RecordDefaults, Side, marriage, marriage_month, marriage_records,
                           page, person)
 from verso.ru.dsl.statuses import (MESHCHANIN, PEASANT_DAUGHTER, PEASANT_FEMALE, PEASANT_MALE,
-                                   PEASANT_SON)
+                                   PEASANT_SON, SOLDIER)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1912 г.,
 # часть вторая «О бракосочетавшихся». ГАВО ф.590 оп.12 д.199, лл. 61об–68об.
@@ -43,7 +43,7 @@ dmitrievy_gory_marriages_1912 = marriage_records(
                                    bride_marriage_num=1, bride_age=20,
                                    witness1=person("Косма", last_name_orig="Шуянов"),
                                    witness2=person("Николай", "Максимов", last_name_orig="Мирошкин"),
-                                   witness3=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"),
+                                   witness3=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                                    witness4=person("Стефан", "Георгиев", last_name_orig="Козлов"),
                                    comment="невеста по отчеству — сестра Василия, Иоанна и Варвары Андреевых "
                                            "Кекевых. Фамилия жениха читается неуверенно («Савлинскій»/«Савлиневъ»); "
@@ -66,7 +66,7 @@ dmitrievy_gory_marriages_1912 = marriage_records(
                                            "записи 1913 г. (л. 87об) — описка писца. На поле поздняя приписка "
                                            "синим: «бракъ расторгнутъ, Пенза 1927 годъ»"),
                           marriage(24, 3,
-                                   groom=person("Александр", "Димитриев", last_name_orig="Кекев", status="запасный солдат"),
+                                   groom=person("Александр", "Димитриев", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                                    groom_marriage_num=1, groom_age="25 лет 6 мес",
                                    bride=person("Екатерина", "Андреева", last_name_orig="Романшина", status=PEASANT_DAUGHTER),
                                    bride_marriage_num=1, bride_age=19,

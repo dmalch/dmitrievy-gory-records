@@ -198,7 +198,7 @@ dmitrievy_gory_births_1872 = birth_records(
                              child=person("Симеонъ"),
                              father=person("Иванъ", "Порфирьевъ", status=SOLDIER, comment="находящийся в домовом отпуску по билету рядовой солдат"),
                              mother=person("Ненила", "Васильева", status=SOLDIER_SPOUSE),
-                             god_parent1=person("Павелъ", "Ѳокинъ", status="отпускной рядовой солдат"),
+                             god_parent1=person("Павелъ", "Ѳокинъ", status=SOLDIER, comment="отпускной рядовой солдат"),
                              god_parent2=person("Настасья", "Порфирьева", status=PEASANT_ZHONKA)),
                        ),
           ),

@@ -1,8 +1,8 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_SON,
-                                   PEASANT_SPOUSE, PEASANT_WIDOW, PEASANT_ZHONKA, SOLDIER_SON,
-                                   SOLDIER_WIFE, SOLDIER_ZHONKA)
+                                   PEASANT_SPOUSE, PEASANT_WIDOW, PEASANT_ZHONKA, SOLDIER,
+                                   SOLDIER_SON, SOLDIER_WIFE, SOLDIER_ZHONKA)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1907 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.**198**, лл. 334–362
@@ -54,7 +54,7 @@ dmitrievy_gory_births_1907 = birth_records(
                        # Васильева отодвинулась с 1908 на 1907 год
                        birth(2, Gender.FEMALE, 16, 18,
                              child=person("Анна"),
-                             father=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Евфимий", "Иоаннов", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Мария", "Васильева"),
                              god_parent1=person("Гавриил", "Матфеев", last_name_orig="Мирошкин", status=SOLDIER_SON),
                              god_parent2=person("Стефанида", "Данилина", last_name_orig="Кандрушина", status=SOLDIER_WIFE)),
@@ -92,7 +92,7 @@ dmitrievy_gory_births_1907 = birth_records(
                        # раньше — рождение 1895 № 38, 1895-08-16.
                        birth(29, Gender.MALE, None, 18,
                              child=person("Иоанн"),
-                             father=person("Сергий", "Алексиев", last_name_orig="Кекев", status="запасный солдат"),
+                             father=person("Сергий", "Алексиев", last_name_orig="Кекев", status=SOLDIER, comment="запасный солдат"),
                              mother=person("Екатерина", "Алексиева"),
                              god_parent1=person("Иаков", "Сильвестров", status=PEASANT_SON),
                              god_parent2=person("Екатерина", "Михайлова", last_name_orig="Кикева", status=SOLDIER_ZHONKA)),

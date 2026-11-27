@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, Relationship, death, death_month,
                           death_records, page, person, relative)
 from verso.ru.dsl.causes_of_death import DIARRHEA, PLEURISY
-from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE
+from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, SOLDIER
 
 # Метрическая книга Покровской церкви с. Димитріевы Горы за 1871 г.,
 # часть третья «О умершихъ». ГАВО ф.590 оп.12 д.**195**, лл. 21об–28об
@@ -48,7 +48,7 @@ dmitrievy_gory_deaths_1871 = death_records(
                        # ребёнокъ**. ⚠ Мать в ч. 3 не названа — часть третья зовёт одного отца
                        death(8, Gender.MALE, 16, 18,
                              deceased=person("Василій"), age="1 мес 2 нед",
-                             relatives=[relative(person("Харитонъ", "Ѳокинъ", residence="Кононово", status="находящийся в домовом отпуску рядовой солдат"), Relationship.FATHER)],
+                             relatives=[relative(person("Харитонъ", "Ѳокинъ", residence="Кононово", status=SOLDIER, comment="находящийся в домовом отпуску рядовой солдат"), Relationship.FATHER)],
                              cause_of_death=PLEURISY),
                        ),
           ),

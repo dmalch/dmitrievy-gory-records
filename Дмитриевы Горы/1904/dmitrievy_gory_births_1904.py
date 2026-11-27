@@ -1,7 +1,8 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_SON,
-                                   PEASANT_SPOUSE, PEASANT_ZHONKA, RETIRED_SOLDIER, SOLDIER_GIRL)
+                                   PEASANT_WIFE, PEASANT_ZHONKA, RETIRED_SOLDIER, SOLDIER,
+                                   SOLDIER_GIRL, SOLDIER_LEGAL_WIFE)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1904 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.**198**.
@@ -27,7 +28,7 @@ from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE,
 # живущего в Нижегородской губернии; лист подшит в другом конце дела и к
 # Кекевым отношения не имеет.
 #
-# reviewed=False: read once from the scans, not yet checked back against them.
+# Все десять записей вычитаны владельцем на сервере 26.11.2026 (проект `pilot`).
 
 DEFAULTS = RecordDefaults(residence="Дмитриевы Горы", status_male=PEASANT_MALE,
                           status_female=PEASANT_FEMALE, status_mother=PEASANT_FEMALE)
@@ -35,7 +36,7 @@ DEFAULTS = RecordDefaults(residence="Дмитриевы Горы", status_male=P
 dmitrievy_gory_births_1904 = birth_records(
     "ГАВО", "590", "12", "198", "Дмитриевы Горы", "Покровская",
     1904,
-    *page("214об", reviewed=False,
+    *page("214об",
           *birth_month(Month.JANUARY,
                        # ЭТО та Евдокия, чью смерть дал 1905 год: «Георгія Кекева дочь Евдокія», полутора лет,
                        # ум. 2 октября 1905 г. от скарлатины (л. 285об) — на следующий день после брата
@@ -44,14 +45,14 @@ dmitrievy_gory_births_1904 = birth_records(
                        # на год, к 1904-му. ⚠ Запись даёт фамилию ОДИН раз, в конце: «Георгій Іоанновъ и
                        # законная жена его: Анна Іоаннова **Кекевы**» — писец 1904 г. так делает часто
                        birth(5, Gender.FEMALE, 17, 18,
-                             child=person("Евдокия"),
-                             father=person("Георгий", "Иоаннов", last_name_orig="Кекев"),
-                             mother=person("Анна", "Иоаннова"),
-                             god_parent1=person("Михаил", "Гаврилов"),
-                             god_parent2=person("Евдокия", "Сергиева", last_name_orig="Иоаннова", status=PEASANT_ZHONKA)),
+                             child=person("Евдокія"),
+                             father=person("Георгій", "Іоанновъ", last_name_orig="Кекевъ"),
+                             mother=person("Анна", "Іоаннова", status=PEASANT_WIFE),
+                             god_parent1=person("Михаилъ", "Гавриловъ", status=PEASANT_SON),
+                             god_parent2=person("Евдокія", "Сергіева", last_name_orig="Ионисеева", status=PEASANT_ZHONKA, comment="фамилий неразборчива")),
                        ),
           ),
-    *page("215об", reviewed=False,
+    *page("215об",
           *birth_month(Month.FEBRUARY,
                        # ЭТО старшая дочь Михаила Феодорова, похороненная 25 октября 1906 г. «2¾» лет от
                        # скарлатины (л. 327об) — четырьмя днями позже сестры Матроны. Из «2¾» выводилось
@@ -62,14 +63,14 @@ dmitrievy_gory_births_1904 = birth_records(
                        # против другого ⚠ **Первенство снято 05.09.2026**: Михаил Федорович Кекев назван
                        # раньше — рождение 1893 № 10, 1893-04-08.
                        birth(13, Gender.FEMALE, 8, 9,
-                             child=person("Евдокия"),
-                             father=person("Михаил", "Феодоров", last_name_orig="Кекев", status="запасный солдат"),
-                             mother=person("Мария", "Саввина"),
-                             god_parent1=person("Иоанн", "Алексиев", last_name_orig="Мокеев"),
-                             god_parent2=person("Пелагия", "Никитина", last_name_orig="Кекева", status=PEASANT_ZHONKA)),
+                             child=person("Евдокія"),
+                             father=person("Михаилъ", "Ѳеодоровъ", last_name_orig="Кекевъ", status=SOLDIER, comment="запасный солдат"),
+                             mother=person("Марія", "Саввина", status=PEASANT_WIFE),
+                             god_parent1=person("Іоаннъ", "Алексіевъ", last_name_orig="Мокевъ"),
+                             god_parent2=person("Параскева", "Никитина", last_name_orig="Кекева", status=PEASANT_ZHONKA)),
                        ),
           ),
-    *page("220об", reviewed=False,
+    *page("220об",
           *birth_month(Month.JUNE,
                        # САМАЯ РАННЯЯ запись пары — на два года раньше 1906 г. — и НОВЫЙ сын, названный в
                        # честь отца. **Пелагия Феодорова**, первая жена, названа теперь с 1904 г. Восприемница
@@ -77,25 +78,25 @@ dmitrievy_gory_births_1904 = birth_records(
                        # снято 05.09.2026**: Феодор Иванович Кекев назван раньше — рождение 1893 № 32,
                        # 1893-09-06.
                        birth(25, Gender.MALE, 3, 6,
-                             child=person("Феодор"),
-                             father=person("Феодор", "Иоаннов", last_name_orig="Кекев"),
-                             mother=person("Пелагия", "Феодорова"),
-                             god_parent1=person("Даниил", "Петров", last_name_orig="Рыбкин"),
-                             god_parent2=person("Васса", "Алексиева", last_name_orig="Кочеткова", status=PEASANT_ZHONKA)),
+                             child=person("Ѳеодоръ"),
+                             father=person("Ѳеодоръ", "Іоанновъ", last_name_orig="Кекевъ"),
+                             mother=person("Пелагія", "Ѳеодорова", status=PEASANT_WIFE),
+                             god_parent1=person("Даніилъ", "Петровъ", last_name_orig="Рыбкинъ"),
+                             god_parent2=person("Васса", "Алексіева", last_name_orig="Кочеткова", status=PEASANT_ZHONKA)),
                        # САМАЯ РАННЯЯ запись Сергия Алексиева (двор 3 переписи 1897 г., 18 лет) — он был
                        # известен как отец с 1907 г., а его жена как восприемница с 1905 г. — и НОВАЯ дочь.
                        # Рождена и крещена в один день. Восприемник Григорий Алексиев — его родной брат, ещё
                        # «крестьянскій сынъ» ⚠ **Первенство снято 05.09.2026**: Сергий Алексеевич Кекев назван
                        # раньше — рождение 1895 № 38, 1895-08-16.
                        birth(27, Gender.FEMALE, 21, 21,
-                             child=person("Евфросиния"),
-                             father=person("Сергий", "Алексиев", last_name_orig="Кекев", status="запасный солдат"),
-                             mother=person("Екатерина", "Алексиева"),
-                             god_parent1=person("Григорий", "Алексиев", last_name_orig="Кекев", status=PEASANT_SON),
-                             god_parent2=person("Екатерина", "Иоаннова", last_name_orig="Малышева", status=PEASANT_ZHONKA)),
+                             child=person("Евфросинія"),
+                             father=person("Сергій", "Алексіевъ", last_name_orig="Кекевъ", status=SOLDIER, comment="запасный солдат"),
+                             mother=person("Екатерина", "Алексіева", status=SOLDIER_LEGAL_WIFE),
+                             god_parent1=person("Григорій", "Алексіевъ", last_name_orig="Кекевъ", status=PEASANT_SON),
+                             god_parent2=person("Екатерина", "Іоаннова", last_name_orig="Маслихина", status=PEASANT_ZHONKA)),
                        ),
           ),
-    *page("225об", reviewed=False,
+    *page("225об",
           *birth_month(Month.JULY,
                        # НОВЫЙ сын и — до разбора 1903 года — самая ранняя запись пары. Теперь раньше есть их
                        # **венчание 3 октября 1903 г.** (брак № 11, л. 30об), и оно называет девичью фамилию
@@ -105,14 +106,14 @@ dmitrievy_gory_births_1904 = birth_records(
                        # года окончательно опиской ⚠ **Первенство снято 05.09.2026**: Григорий Андреевич Кекев
                        # назван раньше — рождение 1897 № 51, 1897-11-14.
                        birth(42, Gender.MALE, 30, 31,
-                             child=person("Матфий"),
-                             father=person("Григорий", "Андреев", last_name_orig="Кекев"),
+                             child=person("Матѳій"),
+                             father=person("Григорій", "Андреевъ", last_name_orig="Кекевъ"),
                              mother=person("Екатерина", "Васильева"),
-                             god_parent1=person("Григорий", "Алексиев", last_name_orig="Кекев", status=PEASANT_SON),
-                             god_parent2=person("Мария", "Григорьева", last_name_orig="Юдева", status=PEASANT_MAIDEN)),
+                             god_parent1=person("Евфимій", "Іоанновъ", last_name_orig="Кекевъ", status=SOLDIER, comment="запасный солдат"),
+                             god_parent2=person("Наталія", "Ѳеодорова", last_name_orig="Никитова", status=PEASANT_MAIDEN)),
                        ),
           ),
-    *page("226об", reviewed=False,
+    *page("226об",
           *birth_month(Month.AUGUST,
                        # ЭТО тот Павел, чью смерть дал 1905 год: «Андрея Іоаннова Кекева сынъ мл. Павелъ», ум.
                        # 13 марта 1905 г., в графе возраста «7» без единицы меры (л. 278об). Было неясно, семь
@@ -129,56 +130,57 @@ dmitrievy_gory_births_1904 = birth_records(
                        # по отчеству сестра отца; через год, 2 октября 1905 г., она венчается с Петром
                        # Георгиевым Шимаряновым, а тот в 1906 г. крестит у этой же пары
                        birth(48, Gender.MALE, 17, 17,
-                             child=person("Павел"),
-                             father=person("Андрей", "Иоаннов", last_name_orig="Кекев"),
-                             mother=person("Евфросиния", "Афанасиева"),
-                             god_parent1=person("Евгений", "Николаев", last_name_orig="Фитуровский", status="псаломщик"),
-                             god_parent2=person("Александра", "Иоаннова", last_name_orig="Кекева", status=PEASANT_MAIDEN)),
+                             child=person("Павелъ"),
+                             father=person("Андрей", "Іоанновъ", last_name_orig="Кекевъ"),
+                             mother=person("Евфросинія", "Афанасіева", status=PEASANT_WIFE),
+                             god_parent1=person("Евгеній", last_name_orig="Фтуровскій", status="псаломщик"),
+                             god_parent2=person("Александра", "Іоаннова", last_name_orig="Кекева", status=PEASANT_MAIDEN)),
                        ),
           ),
     # Вторая волна (09.11.2026): дети замужних дочерей Кекевых, найденные по имени мужа.
-    # reviewed=False: прочитано по сканам один раз, не вычитано.
-    *page("216об", reviewed=False,
+    # Вычитаны владельцем на сервере 26.11.2026.
+    *page("216об",
           *birth_month(Month.FEBRUARY,
                        # мать — Дарья Романовна Кекева (брак 1894 № 34 с Григорием Петровичем Рыбкиным); восприемник — её
                        # брат Косма Романович
                        birth(16, Gender.FEMALE, 18, 20,
                              child=person("Евдокія"),
                              father=person("Григорій", "Петровъ", last_name_orig="Рыбкинъ"),
-                             mother=person("Дарія", "Романова", status=PEASANT_SPOUSE),
-                             god_parent1=person("Косма", "Романовъ", last_name_orig="Кекевъ")),
+                             mother=person("Дарія", "Романова", status=PEASANT_WIFE),
+                             god_parent1=person("Косма", "Романовъ", last_name_orig="Кекевъ"),
+                             god_parent2=person("Евфимія", "Алексіева", last_name_orig="Рыбкина", status=PEASANT_ZHONKA)),
                        ),
           ),
-    *page("226об", reviewed=False,
+    *page("226об",
           *birth_month(Month.AUGUST,
                        # мать — Матрона Романовна Кекева (брак 1899 № 18 с Иоанном Евфимиевичем Юкачевым); восприемник —
                        # Евфимий Георгиевич Кекев
                        birth(48, Gender.FEMALE, 14, 15,
                              child=person("Наталія"),
                              father=person("Іоаннъ", "Евфиміевъ", last_name_orig="Юкачевъ"),
-                             mother=person("Матрона", "Романова", status=PEASANT_SPOUSE),
+                             mother=person("Матрона", "Романова", status=PEASANT_WIFE),
                              god_parent1=person("Евфимій", "Георгіевъ", last_name_orig="Кекевъ", status=PEASANT_SON),
-                             god_parent2=person("Екатерина", "Панкратіева", last_name_orig="Шишкина", status=PEASANT_ZHONKA)),
+                             god_parent2=person("Екатерина", "Панкратіева", last_name_orig="Шичкина", status=PEASANT_ZHONKA)),
                        # мать — Марфа Максимовна Кекева (брак 1884 № 8 с Николаем Васильевичем Горбачевым); восприемник — её
                        # брат Димитрий Максимович Кекев
                        birth(49, Gender.FEMALE, 17, 18,
                              child=person("Наталія"),
-                             father=person("Николай", "Васильевъ", last_name_orig="Горбачевъ"),
-                             mother=person("Марѳа", "Максимова", status=PEASANT_SPOUSE),
-                             god_parent1=person("Димитрій", "Максимовъ", last_name_orig="Кекевъ", status=RETIRED_SOLDIER),
+                             father=person("Николай", "Василіевъ", last_name_orig="Горбачевъ"),
+                             mother=person("Марфа", "Максимова", status=PEASANT_WIFE),
+                             god_parent1=person("Дмитрій", "Максимовъ", last_name_orig="Кекевъ", status=RETIRED_SOLDIER),
                              god_parent2=person("Любовь", "Николаева", last_name_orig="Горбачева", status=PEASANT_MAIDEN)),
                        ),
           ),
-    *page("233об", reviewed=False,
+    *page("233об",
           *birth_month(Month.NOVEMBER,
                        # мать — Мария Георгиевна Кекева (брак 1903 № 7 с Феодором Филипповичем Шимаряновым); восприемница — её
                        # сестра Матрона Георгиевна Кекева
                        birth(61, Gender.MALE, 21, 22,
                              child=person("Николай"),
-                             father=person("Ѳеодоръ", "Филипповъ", last_name_orig="Шимаряновъ"),
-                             mother=person("Марія", "Георгіева", status=PEASANT_SPOUSE),
+                             father=person("Феодоръ", "Филипповъ", last_name_orig="Шимаряновъ"),
+                             mother=person("Марія", "Георгіева", status=PEASANT_WIFE),
                              god_parent1=person("Павелъ", "Филипповъ", last_name_orig="Шимаряновъ", status=PEASANT_SON),
-                             god_parent2=person("Матрона", "Георгіева", last_name_orig="Кекева", status=SOLDIER_GIRL)),
+                             god_parent2=person("Матрона", "Георгіева", last_name_orig="Кекева", status=SOLDIER_GIRL, comment="солдатская девица")),
                        ),
           ),
     defaults=DEFAULTS,

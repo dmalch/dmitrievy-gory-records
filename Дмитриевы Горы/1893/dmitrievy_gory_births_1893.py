@@ -1,8 +1,8 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE, PEASANT_SON,
-                                   PEASANT_SPOUSE, PEASANT_ZHONKA, SOLDIER, SOLDIER_SPOUSE,
-                                   SOLDIER_ZHONKA)
+                                   PEASANT_SPOUSE, PEASANT_ZHONKA, SOLDIER, SOLDIER_GIRL,
+                                   SOLDIER_SPOUSE, SOLDIER_ZHONKA)
 
 # Метрическая книга Покровской церкви с. Димитриевы Горы за 1893 г.,
 # часть первая «О родившихся». ГАВО ф.590 оп.12 д.**197**, лл. 86а–100об
@@ -202,7 +202,7 @@ dmitrievy_gory_births_1893 = birth_records(
                              father=person("Артемъ", "Евсигнеевъ", last_name_orig="Шерстневъ", status=SOLDIER, comment="запасноотпускной солдат"),
                              mother=person("Надежда", "Климова", status=SOLDIER_SPOUSE),
                              god_parent1=person("Стефанъ", "Васильевъ", last_name_orig="Савинъ", status=SOLDIER, comment="запасноотпускной солдат"),
-                             god_parent2=person("Надежда", "Антонова", residence="Кононово", status="солдатская девица", comment="«села Кононова солдатская дѣвица»; фамилия не записана")),
+                             god_parent2=person("Надежда", "Антонова", residence="Кононово", status=SOLDIER_GIRL, comment="«села Кононова солдатская дѣвица»; фамилия не записана")),
                        ),
           ),
     *page("98об",
